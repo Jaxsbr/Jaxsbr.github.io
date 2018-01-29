@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)
  */
 body {
-  font-family: 'Lato'; 
+  font-family: 'Kumar One Outline'; 
   text-align: center;
 }
 
@@ -15,7 +15,9 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: 'Montserrat'; }
+  font-family: 'Kumar One Outline'; 
+  /* font-family: 'Amatic SC';  */
+}
 
 hr.star-light,
 hr.star-dark {
@@ -38,18 +40,20 @@ hr.star-dark:after {
   font-size: 2em; }
 
 hr.star-light {
-  border-color: #fff; }
+  border-color: #fff; 
+}
 
 hr.star-light:after {
   color: #fff;
-  background-color: #18BC9C; }
+  background-color: #000000; }
 
 hr.star-dark {
-  border-color: #2C3E50; }
+  border-color: #000000; }
 
 hr.star-dark:after {
-  color: #2C3E50;
-  background-color: white; }
+  color: #000000;
+  background-color: #f3843e; 
+}
 
 section {
   padding: 6rem 0; }
@@ -86,20 +90,20 @@ section {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-weight: 700;
-  font-family: 'Montserrat'; }
+  font-family: 'Kumar One Outline'; }
   #mainNav .navbar-brand {
-    color: #fff; }
+    color: #ff9900; }
   #mainNav .navbar-nav {
     margin-top: 1rem;
     letter-spacing: 0.0625rem; }
     #mainNav .navbar-nav li.nav-item a.nav-link {
-      color: #fff; }
+      color: #ff9900; }
       #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-        color: #18BC9C; }
+        color: #ff5a09; }
       #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-        color: #fff; }
+        color: #ff9900; }
       #mainNav .navbar-nav li.nav-item a.nav-link.active {
-        color: #18BC9C; }
+        color: #ff5a09; }
   #mainNav .navbar-toggler {
     font-size: 80%;
     padding: 0.8rem; }
@@ -119,10 +123,10 @@ section {
     #mainNav .navbar-nav {
       margin-top: 0; }
     #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-      color: #fff;
+      color: #ff9900;
       background: #18BC9C; }
       #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-        color: #fff;
+        color: #ff9900;
         background: #18BC9C; }
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
@@ -162,7 +166,7 @@ header.masthead {
       -moz-transition: all ease 0.5s;
       transition: all ease 0.5s;
       opacity: 0;
-      background-color: rgba(24, 188, 156, 0.9); }
+      background-color: rgba(0, 0, 0, 0.9); }
       .portfolio .portfolio-item .portfolio-item-caption:hover {
         opacity: 1; }
       .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
@@ -253,9 +257,9 @@ form .row:first-child .floating-label-form-group {
   background-color: #1a252f; }
 
 a {
-  color: #18BC9C; }
+  color: #ff9900; }
   a:focus, a:hover, a:active {
-    color: #128f76; }
+    color: #ff5a09; }
 
 .btn {
   border-width: 2px; }
@@ -266,11 +270,87 @@ a {
 .bg-secondary {
   background-color: #2C3E50 !important; }
 
+.bg-black {
+  background-color: black;
+}
+
+.bg-gradient {  
+  /* background: radial-gradient(#00ffff, black); */
+  background: linear-gradient(#111111, black);
+  /* background-color: #111111; */
+}
+
+.bg-1 {
+    background-color: #393939;
+}
+
+.bg-2 {
+    background-color: #ff5a09;    
+}
+
+.bg-3 {
+    background-color: #f3843e;    
+}
+
+.bg-4 {
+    background-color: #ff9900;    
+}
+
+.bg-5 {
+    background-color: #6e6e6e;    
+}
+
+.text-plainfont {
+  font-family: sans-serif;
+}
+
+.text-white {
+  color: #fff;  
+}
+
+.text-black {
+  color: rgb(0, 0, 0);  
+}
+
+.text-1 {
+  color: #393939;
+}
+
+.text-2 {
+  color: #ff5a09;  
+}
+
+.text-3 {
+  color: #f3843e;  
+}
+
+.text-4 {
+  color: #ff9900;  
+}
+
+.text-5 {
+  color: #6e6e6e;  
+}
+
+.text-6 {
+  color: #9e9d9d;  
+}
+
 .text-primary {
   color: #18BC9C !important; }
 
 .text-secondary {
   color: #2C3E50 !important; }
+
+
+  .text-mirror {
+    -moz-transform: scaleY(-1);    /* Gecko */
+    -o-transform: scaleY(-1);      /* Opera */
+    -webkit-transform: scaleY(-1); /* Webkit */
+    transform: scaleY(-1);         /* Standard */
+    filter: FlipH;                 /* IE 6/7/8 */
+  }
+
 
 .btn-primary {
   background-color: #18BC9C;
