@@ -98,15 +98,22 @@ DayCycle.prototype.update = function(delta) {
 };
 
 DayCycle.prototype.render = function(ctx, canvasBounds) {
-    ctx.fillStyle = 'black';
+    let center = { x: canvasBounds.w / 2, y: canvasBounds.h / 2 };
+    let radius = canvasBounds.w / 2;
+    let gradient = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, radius);
+
+    gradient.addColorStop(0, 'black');
+    gradient.addColorStop(1, 'transparent');
+
     ctx.save();
     ctx.globalAlpha = this.lightLevel;
+    ctx.fillStyle = gradient;
     ctx.fillRect(canvasBounds.x, canvasBounds.y, canvasBounds.w, canvasBounds.h);
     ctx.restore();
 
-    ctx.fillStyle = 'yellow';
-    ctx.font = '10px Georgia';
-    ctx.fillText(this.lightLevel.toString(), 0, 10);
+    // ctx.fillStyle = 'yellow';
+    // ctx.font = '10px Georgia';
+    // ctx.fillText(this.lightLevel.toString(), 0, 10);
 };
 
 
@@ -145,12 +152,10 @@ SeasonSimulator.prototype.setNextSeason = function() {
         case this.seasonSpring:
         this.toggleSeason(this.seasonSummer);
         break;
-    }
-
-    this.color = this.getSeasonColor();
+    }    
 };
 
-SeasonSimulator.prototype.getSeasonColor = function() {
+SeasonSimulator.prototype.setSeasonColor = function() {
     switch (this.season) {
         case this.seasonSummer:
         this.color = '#79c476';
@@ -172,6 +177,7 @@ SeasonSimulator.prototype.update = function(delta) {
     if (this.seasonElapsed >= this.seasonElapsedMax) {
         this.seasonElapsed = 0;
         this.setNextSeason();
+        this.setSeasonColor();
     }
 
     switch (this.season) {
@@ -191,6 +197,13 @@ SeasonSimulator.prototype.update = function(delta) {
 };
 
 SeasonSimulator.prototype.render = function(ctx, canvasBounds) {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(canvasBounds.x, canvasBounds.y, canvasBounds.w, canvasBounds.h);
+    let center = { x: canvasBounds.w / 2, y: canvasBounds.h / 2 };
+    let radius = canvasBounds.w / 2;
+    let gradient = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, radius);
+
+    gradient.addColorStop(0, this.color);
+    gradient.addColorStop(1, 'transparent');
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(canvasBounds.x, canvasBounds.y, canvasBounds.w, canvasBounds.h);    
 };
