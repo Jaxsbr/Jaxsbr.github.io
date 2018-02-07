@@ -11,8 +11,19 @@ let then = Date.now();
 let dayCycle;
 let seasonSimulator;
 
+let treeImageLoaded = false;
+let treeImage = new Image();
+
+
 window.addEventListener('load', function () { 
     initCanvas();
+
+    treeImage.onload = function() {
+        if (seasonSimulator) {
+            seasonSimulator.treeImage = treeImage;
+        }
+    }
+    treeImage.src = "img/trees.png";
 
     dayCycle = new DayCycle();
     seasonSimulator = new SeasonSimulator();
@@ -47,7 +58,7 @@ function updateDelta() {
 
 function update() {
     dayCycle.update(delta);
-    seasonSimulator.update(delta);
+    seasonSimulator.update(delta, canvasBounds);
 };
 
 function render() {    
@@ -131,7 +142,12 @@ SeasonSimulator = function() {
     this.color = 'lightgreen';
 
     this.seasonElapsed = 0;
-    this.seasonElapsedMax = 24;
+    this.seasonElapsedMax = 24;    
+
+    this.sourceRect = { x:0, y:0, w:500, h:500 };
+    
+    this.treeImage;
+    this.treeImageMaxSize = { x:125, y:125 };
 };
 
 SeasonSimulator.prototype.toggleSeason = function(season) {
@@ -172,7 +188,39 @@ SeasonSimulator.prototype.setSeasonColor = function() {
     }
 };
 
-SeasonSimulator.prototype.update = function(delta) {
+SeasonSimulator.prototype.setImageRenderSourceRect = function() {
+    switch (this.season) {
+        case this.seasonSummer:
+        this.sourceRect.x = 0;
+        this.sourceRect.y = 0;
+        break;
+        case this.seasonAutum:
+        this.sourceRect.x = 500;
+        this.sourceRect.y = 0;
+        break;
+        case this.seasonWinter:
+        this.sourceRect.x = 500;
+        this.sourceRect.y = 500;
+        break;        
+        case this.seasonSpring:
+        this.sourceRect.x = 0;
+        this.sourceRect.y = 500;
+        break;
+    }
+};
+
+SeasonSimulator.prototype.setImageMaxSize = function(canvasBounds) {
+    var maxSide = canvasBounds.w > canvasBounds.h ? canvasBounds.h : canvasBounds.w;
+    var padding = (maxSide / 10) * 4;
+    this.treeImageMaxSize.x = maxSide - padding;
+    this.treeImageMaxSize.y = maxSide - padding;
+};
+
+SeasonSimulator.prototype.update = function(delta, canvasBounds) {
+    this.colorRadius = canvasBounds.w / 2;
+    this.canvasCenter = { 
+        x: canvasBounds.x + canvasBounds.w / 2, 
+        y: canvasBounds.y + canvasBounds.h / 2 };    
     this.seasonElapsed += delta;
     if (this.seasonElapsed >= this.seasonElapsedMax) {
         this.seasonElapsed = 0;
@@ -180,30 +228,39 @@ SeasonSimulator.prototype.update = function(delta) {
         this.setSeasonColor();
     }
 
-    switch (this.season) {
-        case this.seasonSummer:
-        
-        break;
-        case this.seasonAutum:
-        
-        break;
-        case this.seasonWinter:
-        
-        break;        
-        case this.seasonSpring:
-        
-        break;
-    }
+    this.setImageRenderSourceRect();    
+    this.setImageMaxSize(canvasBounds);
 };
 
-SeasonSimulator.prototype.render = function(ctx, canvasBounds) {
-    let center = { x: canvasBounds.w / 2, y: canvasBounds.h / 2 };
-    let radius = canvasBounds.w / 2;
-    let gradient = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, radius);
+SeasonSimulator.prototype.render = function(ctx, canvasBounds) {    
+    let gradient = ctx.createRadialGradient(        
+        this.canvasCenter.x,
+        this.canvasCenter.y,
+        0,
+        this.canvasCenter.x,
+        this.canvasCenter.y,
+        this.colorRadius);
 
     gradient.addColorStop(0, this.color);
     gradient.addColorStop(1, 'transparent');
 
     ctx.fillStyle = gradient;
     ctx.fillRect(canvasBounds.x, canvasBounds.y, canvasBounds.w, canvasBounds.h);    
+
+    this.renderObjects(ctx, canvasBounds);
+};
+
+SeasonSimulator.prototype.renderObjects = function(ctx, canvasBounds) {
+    if (!this.treeImage) { return; }
+
+    ctx.drawImage(
+        this.treeImage,
+        this.sourceRect.x, 
+        this.sourceRect.y, 
+        this.sourceRect.w, 
+        this.sourceRect.h,
+        this.canvasCenter.x - (this.treeImageMaxSize.x / 2),
+        this.canvasCenter.y - (this.treeImageMaxSize.y / 2),
+        this.treeImageMaxSize.x, 
+        this.treeImageMaxSize.y);
 };
