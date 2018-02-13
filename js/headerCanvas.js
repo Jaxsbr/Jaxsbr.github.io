@@ -74,11 +74,11 @@ function render() {
 // ===============================================
 
 DayCycle = function() {
-    this.elapsed = 0;
+    this.elapsed = 12;
     this.elapsedMax = 24;
-    this.morning = 6;
+    this.morning = 0.5;
     this.midday = 13;
-    this.evening = 19;
+    this.evening = 23.5;
     this.lightLevel = 1;
 };
 
