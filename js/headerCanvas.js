@@ -7,6 +7,7 @@ let canvasBounds = {x:0, y:0, w:0, h:0};
 let animateHeaderCanvas = true;
 let points = [];
 let delta = 0;
+let startDate = Date.now();
 let then = Date.now();
 let dayCycle;
 let seasonSimulator;
@@ -16,11 +17,23 @@ let treeImage = new Image();
 
 
 window.addEventListener('load', function () { 
+    load();
+});
+
+window.addEventListener('resize', function () { 
+    initCanvas();
+});
+
+function load() {
     initCanvas();
 
     treeImage.onload = function() {
         if (seasonSimulator) {
             seasonSimulator.treeImage = treeImage;
+
+            let date = Date.now();
+            let loadTime = date - startDate;
+            //alert('images load time: ' + loadTime);
         }
     }
     treeImage.src = "img/trees.png";
@@ -28,12 +41,8 @@ window.addEventListener('load', function () {
     dayCycle = new DayCycle();
     seasonSimulator = new SeasonSimulator();
 
-    initLoop();    
-});
-
-window.addEventListener('resize', function () { 
-    initCanvas();
-});
+    initLoop();   
+}
 
 function initCanvas() {
     canvasBounds.x = 0;
