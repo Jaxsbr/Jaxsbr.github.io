@@ -363,6 +363,12 @@ a {
   }
 
 
+.linkedin {
+  width: 16px;
+  height: 16px;
+}
+
+
 .btn-primary {
   background-color: #18BC9C;
   border-color: #18BC9C; }
