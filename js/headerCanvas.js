@@ -11,6 +11,7 @@ let startDate = Date.now();
 let then = Date.now();
 let dayCycle;
 let seasonSimulator;
+let treeImageSize = {x:250, y:250}; // actual image size when sliced into a single frame
 
 let treeImageLoaded = false;
 let treeImage = new Image();
@@ -36,10 +37,11 @@ function load() {
             //alert('images load time: ' + loadTime);
         }
     }
-    treeImage.src = "img/trees.png";
+    //treeImage.src = "img/trees.png";
+    treeImage.src = "img/trees_250.png";// lower resolution
 
     dayCycle = new DayCycle();
-    seasonSimulator = new SeasonSimulator();
+    seasonSimulator = new SeasonSimulator(treeImageSize.x, treeImageSize.y);
 
     initLoop();   
 }
@@ -141,7 +143,7 @@ DayCycle.prototype.render = function(ctx, canvasBounds) {
 // SEASON SIMULATOR
 // ===============================================
 
-SeasonSimulator = function() {    
+SeasonSimulator = function(frameWidth, frameHeight) {    
     this.seasonSummer = 1;
     this.seasonAutum = 2;
     this.seasonWinter = 3;
@@ -153,7 +155,10 @@ SeasonSimulator = function() {
     this.seasonElapsed = 0;
     this.seasonElapsedMax = 24;    
 
-    this.sourceRect = { x:0, y:0, w:500, h:500 };
+    this.frameWidth = frameWidth;
+    this.frameHeight = frameHeight;
+
+    this.sourceRect = { x:0, y:0, w:this.frameWidth, h:this.frameHeight };
     
     this.treeImage;
     this.treeImageMaxSize = { x:125, y:125 };
@@ -204,16 +209,16 @@ SeasonSimulator.prototype.setImageRenderSourceRect = function() {
         this.sourceRect.y = 0;
         break;
         case this.seasonAutum:
-        this.sourceRect.x = 500;
+        this.sourceRect.x = this.frameWidth;
         this.sourceRect.y = 0;
         break;
         case this.seasonWinter:
-        this.sourceRect.x = 500;
-        this.sourceRect.y = 500;
+        this.sourceRect.x = this.frameWidth;
+        this.sourceRect.y = this.frameHeight;
         break;        
         case this.seasonSpring:
         this.sourceRect.x = 0;
-        this.sourceRect.y = 500;
+        this.sourceRect.y = this.frameHeight;
         break;
     }
 };
