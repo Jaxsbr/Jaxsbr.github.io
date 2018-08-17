@@ -1,0 +1,119 @@
+<manifest alg="2" build="2017.0.1.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster" exportTarget="other" domain="PITTEDLEAF.CO.ZA" resolutions="1x" timestamp="1534525904009">
+  <folder name="css">
+    <file name="site_global.css" crc="3815971040"/>
+    <file name="master_a-master.css" crc="3845064498" ref="thank-you:products:contact:index"/>
+    <file name="nomq_preview_master_a-master.css" crc="3960091631" ref="thank-you:products:contact:index"/>
+    <file name="thank-you.css" crc="302475740" ref="thank-you"/>
+    <file name="nomq_thank-you.css" crc="4191665128" ref="thank-you"/>
+    <file name="products.css" crc="3988939999" ref="products"/>
+    <file name="nomq_products.css" crc="4207105745" ref="products"/>
+    <file name="contact.css" crc="4082226178" ref="contact"/>
+    <file name="nomq_contact.css" crc="4260720962" ref="contact"/>
+    <file name="index.css" crc="388373834" ref="index"/>
+    <file name="nomq_index.css" crc="329839838" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:products:contact:thank-you"/>
+    <file name="museutils.js" crc="4148063285" ref="index:products:contact:thank-you"/>
+    <file name="whatinput.js" crc="86476730" ref="index:products:contact:thank-you"/>
+    <file name="museconfig.js" crc="172512987" ref="index:products:contact:thank-you"/>
+    <file name="webpro.js" crc="3986320349" ref="index:products:contact:thank-you"/>
+    <file name="musewpslideshow.js" crc="405464237" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="305414130" ref="index"/>
+    <file name="touchswipe.js" crc="221459597" ref="index"/>
+    <file name="jquery.musemenu.js" crc="3765830709" ref="index:products:contact:thank-you"/>
+    <file name="jquery.watch.js" crc="437028206" ref="index:products:contact:thank-you"/>
+    <file name="musewpdisclosure.js" crc="3865010892" ref="index:products:contact:thank-you"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:products:contact:thank-you"/>
+    <file name="jquery.museresponsive.js" crc="3991890305" ref="index:products:contact:thank-you"/>
+    <file name="require.js" crc="4159430777" ref="index:products:contact:thank-you"/>
+    <file name="form_check.php" crc="303648844" ref="contact"/>
+    <file name="form_throttle.php" crc="236764551" ref="contact"/>
+    <file name="form_process.php" crc="4272079531" ref="contact"/>
+    <file name="form-u19049.php" crc="4289262529" ref="contact"/>
+  </folder>
+  <folder name="images">
+    <file name="favicon.ico" crc="3949032618" ref="index"/>
+    <file name="background-1874580-page-fr.png" crc="3816724492" ref="index:products:contact:thank-you"/>
+    <file name="blank.gif" crc="4208392903" ref="index:products:contact:thank-you"/>
+    <file name="female basic-u21129.png" crc="160581124" ref="index"/>
+    <file name="female delux.jpg" crc="4187456653" seo="true" ref="index:products"/>
+    <file name="female standard-u21270.png" crc="280130851" ref="index"/>
+    <file name="male basic-u21296.png" crc="3794535226" ref="index"/>
+    <file name="male delux-u21322.png" crc="23102633" ref="index"/>
+    <file name="male standard-u21348.png" crc="4220276176" ref="index"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="pitted-leaf.svg" crc="346522605" seo="true" ref="index:products:contact:thank-you"/>
+    <file name="pitted leaf_poster_.png" crc="3994601314" ref="index"/>
+    <file name="facebook icon.png" crc="4085621197" seo="true" ref="index:products:contact:thank-you"/>
+    <file name="female basic-u211292.png" crc="160581124" ref="index"/>
+    <file name="female standard-u212702.png" crc="280130851" ref="index"/>
+    <file name="male basic-u212962.png" crc="3794535226" ref="index"/>
+    <file name="male delux-u213222.png" crc="23102633" ref="index"/>
+    <file name="male standard-u213482.png" crc="4220276176" ref="index"/>
+    <file name="female basic-u211293.png" crc="160581124" ref="index"/>
+    <file name="female standard-u212703.png" crc="280130851" ref="index"/>
+    <file name="male basic-u212963.png" crc="3794535226" ref="index"/>
+    <file name="male delux-u213223.png" crc="23102633" ref="index"/>
+    <file name="male standard-u213483.png" crc="4220276176" ref="index"/>
+    <file name="female basic-u211294.png" crc="160581124" ref="index"/>
+    <file name="female standard-u212704.png" crc="280130851" ref="index"/>
+    <file name="male basic-u212964.png" crc="3794535226" ref="index"/>
+    <file name="male delux-u213224.png" crc="23102633" ref="index"/>
+    <file name="male standard-u213484.png" crc="4220276176" ref="index"/>
+    <file name="burger menu.svg" crc="284373924" ref="index:products:contact:thank-you"/>
+    <file name="burger menu_poster_u10473.png" crc="4268090161" ref="index:products:contact:thank-you"/>
+    <file name="close.svg" crc="4269665266" ref="index:products:contact:thank-you"/>
+    <file name="close_poster_u10481.png" crc="246308383" ref="index:products:contact:thank-you"/>
+    <file name="female basic-u211295.png" crc="160581124" ref="index"/>
+    <file name="female standard-u212705.png" crc="280130851" ref="index"/>
+    <file name="male basic-u212965.png" crc="3794535226" ref="index"/>
+    <file name="male delux-u213225.png" crc="23102633" ref="index"/>
+    <file name="male standard-u213485.png" crc="4220276176" ref="index"/>
+    <file name="female basic-u211296.png" crc="3812045058" ref="index"/>
+    <file name="female delux357x283.jpg" crc="4187136886" seo="true" ref="index"/>
+    <file name="female standard-u212706.png" crc="4118681486" ref="index"/>
+    <file name="male basic-u212966.png" crc="25665299" ref="index"/>
+    <file name="male delux-u213226.png" crc="3996342335" ref="index"/>
+    <file name="male standard-u213486.png" crc="297570562" ref="index"/>
+    <file name="female basic-u211297.png" crc="3812045058" ref="index"/>
+    <file name="female standard-u212707.png" crc="4118681486" ref="index"/>
+    <file name="male basic-u212967.png" crc="25665299" ref="index"/>
+    <file name="male delux-u213227.png" crc="3996342335" ref="index"/>
+    <file name="male standard-u213487.png" crc="297570562" ref="index"/>
+    <file name="female basic-u19868.png" crc="3781240038" ref="products"/>
+    <file name="female standard-u19871.png" crc="72239152" ref="products"/>
+    <file name="male basic-u19877.png" crc="4025748538" ref="products"/>
+    <file name="male standard-u19880.png" crc="417436144" ref="products"/>
+    <file name="male delux-u19883.png" crc="4154750170" ref="products"/>
+    <file name="female basic-u198682.png" crc="3781240038" ref="products"/>
+    <file name="female standard-u198712.png" crc="72239152" ref="products"/>
+    <file name="male basic-u198772.png" crc="4025748538" ref="products"/>
+    <file name="male standard-u198802.png" crc="417436144" ref="products"/>
+    <file name="male delux-u198832.png" crc="4154750170" ref="products"/>
+    <file name="female basic-u198683.png" crc="3781240038" ref="products"/>
+    <file name="female standard-u198713.png" crc="72239152" ref="products"/>
+    <file name="male basic-u198773.png" crc="4025748538" ref="products"/>
+    <file name="male standard-u198803.png" crc="417436144" ref="products"/>
+    <file name="male delux-u198833.png" crc="4154750170" ref="products"/>
+    <file name="female basic-u198684.png" crc="3781240038" ref="products"/>
+    <file name="female standard-u198714.png" crc="72239152" ref="products"/>
+    <file name="male basic-u198774.png" crc="4025748538" ref="products"/>
+    <file name="male standard-u198804.png" crc="417436144" ref="products"/>
+    <file name="male delux-u198834.png" crc="4154750170" ref="products"/>
+    <file name="female basic-u198685.png" crc="3781240038" ref="products"/>
+    <file name="female standard-u198715.png" crc="72239152" ref="products"/>
+    <file name="male basic-u198775.png" crc="4025748538" ref="products"/>
+    <file name="male standard-u198805.png" crc="417436144" ref="products"/>
+    <file name="male delux-u198835.png" crc="4154750170" ref="products"/>
+    <file name="female basic-u198686.png" crc="4122748624" ref="products"/>
+    <file name="female standard-u198716.png" crc="4184903179" ref="products"/>
+    <file name="male basic-u198776.png" crc="3837273218" ref="products"/>
+    <file name="male standard-u198806.png" crc="4049850883" ref="products"/>
+    <file name="male delux-u198836.png" crc="4011050361" ref="products"/>
+  </folder>
+  <file name="index.html" crc="313062370" seo="true" mt="1534276344870" redirect="true"/>
+  <file name="products.html" crc="234753800" seo="true" mt="1534276344873" redirect="true"/>
+  <file name="contact.html" crc="27054467" seo="true" mt="1534525842188" redirect="true"/>
+  <file name="thank-you.html" crc="4069121591" seo="true" mt="1534276342605" redirect="true"/>
+</manifest>
