@@ -312,7 +312,19 @@ a {
 }
 
 .text-plainfont {
-  font-family: sans-serif;
+  font-family: Calibri;
+}
+
+.linkedin {
+  font-size: 2em;  
+  font-weight: lighter;
+  color: #0077B5;
+}
+
+.windows {
+  font-size: 2em;  
+  font-weight: lighter;
+  color: #0077B5;
 }
 
 .text-white {
@@ -392,12 +404,6 @@ a {
     transform: scaleY(-1);         /* Standard */
     filter: FlipH;                 /* IE 6/7/8 */
   }
-
-
-.linkedin {
-  width: 16px;
-  height: 16px;
-}
 
 
 .btn-primary {
