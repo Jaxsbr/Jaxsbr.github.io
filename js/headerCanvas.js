@@ -11,7 +11,7 @@ let startDate = Date.now();
 let then = Date.now();
 let dayCycle;
 let seasonSimulator;
-let treeImageSize = {x:250, y:250}; // actual image size when sliced into a single frame
+let treeImageSize = {x:125, y:125}; // actual image size when sliced into a single frame
 
 let treeImageLoaded = false;
 let treeImage = new Image();

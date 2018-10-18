@@ -168,7 +168,7 @@ header.masthead {
   .portfolio .portfolio-item {
     position: relative;
     display: block;
-    max-width: 25rem;
+    max-width: 15rem;
     margin-bottom: 15px; }
     .portfolio .portfolio-item .portfolio-item-caption {
       -webkit-transition: all ease 0.5s;
@@ -353,7 +353,38 @@ a {
 .text-secondary {
   color: #2C3E50 !important; }
 
+.robo-war-header-container {  
+  width: 100%;
+  padding: 0.5em;  
+}
 
+.robo-war-header {
+  font-family: 'Impact';
+  font-size: 5em;
+  font-weight: bold;
+  display: inline;
+}
+
+.robo-war-button-test {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2em;
+}
+
+.robo-war-description {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.7em;
+}
+
+.robo-war-image {
+  /* 960 600 */
+  width: 100%;
+  height: auto;
+}
+
+.btn-xlg {
+  font-size: 2em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
   .text-mirror {
     -moz-transform: scaleY(-1);    /* Gecko */
     -o-transform: scaleY(-1);      /* Opera */
@@ -382,3 +413,4 @@ a {
   .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
     background-color: #1a252f;
     border-color: #1a252f; }
+
