@@ -38,7 +38,7 @@ function load() {
         }
     }
     //treeImage.src = "img/trees.png";
-    treeImage.src = "img/trees_250.png";// lower resolution
+    treeImage.src = "img/trees_new.png";// lower resolution
 
     dayCycle = new DayCycle();
     seasonSimulator = new SeasonSimulator(treeImageSize.x, treeImageSize.y);
