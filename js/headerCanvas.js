@@ -11,7 +11,7 @@ let startDate = Date.now();
 let then = Date.now();
 let dayCycle;
 let seasonSimulator;
-let treeImageSize = {x:125, y:125}; // actual image size when sliced into a single frame
+let treeImageSize = {x:100, y:100}; // actual image size when sliced into a single frame
 
 let treeImageLoaded = false;
 let treeImage = new Image();
@@ -37,8 +37,7 @@ function load() {
             //alert('images load time: ' + loadTime);
         }
     }
-    //treeImage.src = "img/trees.png";
-    treeImage.src = "img/trees_250.png";// lower resolution
+    treeImage.src = "img/spritetree.png";
 
     dayCycle = new DayCycle();
     seasonSimulator = new SeasonSimulator(treeImageSize.x, treeImageSize.y);
@@ -162,6 +161,10 @@ SeasonSimulator = function(frameWidth, frameHeight) {
     
     this.treeImage;
     this.treeImageMaxSize = { x:125, y:125 };
+    this.treeFrameTime = 0.5;
+    this.treeFrameElapsed = 0;
+    this.treeFrameIndex = 0;
+    this.treeFrameCount = 5;
 };
 
 SeasonSimulator.prototype.toggleSeason = function(season) {
@@ -242,8 +245,23 @@ SeasonSimulator.prototype.update = function(delta, canvasBounds) {
         this.setSeasonColor();
     }
 
-    this.setImageRenderSourceRect();    
+    //this.setImageRenderSourceRect();    
     this.setImageMaxSize(canvasBounds);
+    this.updateTreeAnimation(delta);
+};
+
+SeasonSimulator.prototype.updateTreeAnimation = function(delta) {
+    this.treeFrameElapsed += delta;
+    if (this.treeFrameElapsed > this.treeFrameTime) {
+        this.treeFrameElapsed = 0;
+        this.treeFrameIndex++;
+    }
+
+    if (this.treeFrameIndex == this.treeFrameCount) {
+        this.treeFrameIndex = 0;
+    }
+
+    this.sourceRect.x = this.treeFrameIndex * this.frameWidth;
 };
 
 SeasonSimulator.prototype.render = function(ctx, canvasBounds) {    
