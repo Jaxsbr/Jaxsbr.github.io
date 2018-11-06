@@ -27,6 +27,12 @@ h6 {
   margin-bottom: 2rem;
 }
 
+#noticeCanvas {
+  background-color: silver;
+  width: 100%;
+  height: auto;
+}
+
 hr.star-light,
 hr.star-dark {
   max-width: 15rem;
@@ -72,6 +78,10 @@ section {
     section h2 {
       font-size: 3rem;
       line-height: 2.5rem; } }
+
+.sectionNoPadding {
+  padding: 0 0; 
+}
 
 .btn-xl {
   padding: 1rem 1.75rem;
