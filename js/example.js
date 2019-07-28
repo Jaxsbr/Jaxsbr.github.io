@@ -15,10 +15,10 @@ var deltaTime = Date.now();
 var textLoop_001;
 
 
-var titleFontSize = 60;
+var titleFontSize = 50;
 var titleText = "Animated Backgrounds";
-var titleFontFamily = "Showcard Gothic";
-var titleShadowOffset = new Point(5, 5);
+var titleFontFamily = "Showcard Gothic Bold";
+var titleShadowOffset = new Point(1, 1);
 
 var itemTitleFontFamily = "Calibri";
 var itemTitleShadowOffset = new Point(3, 3);
@@ -56,7 +56,7 @@ Loop();
 
 function InitTextRender() {    
     textRender = new TextRender();
-    textRender.AddTextElement(new TextElement("Something to say?", "yellow", titleFontFamily, 50, 275, titleFontSize, titleShadowOffset));
+    textRender.AddTextElement(new TextElement("Contact me at:", "yellow", titleFontFamily, 50, 275, titleFontSize, titleShadowOffset));
     textRender.AddTextElement(new TextElement("   jbrink386@gmail.com", "purple", titleFontFamily, 50, 335, 45, titleShadowOffset));    
 }
 
