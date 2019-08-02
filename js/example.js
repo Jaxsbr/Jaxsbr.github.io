@@ -1,7 +1,11 @@
 (function(){
+
+window.addEventListener('resize', function() {
+    resize();
+})
+
+
 var bounds = new Rectangle(0, 0, window.innerWidth, window.innerHeight);
-
-
 var noticeCanvas = document.getElementById("noticeCanvas");
 noticeCanvas.width = window.innerWidth;
 noticeCanvas.height = window.innerHeight;
@@ -15,7 +19,7 @@ var deltaTime = Date.now();
 var textLoop_001;
 
 
-var titleFontSize = 50;
+var titleFontSize = 32;
 var titleText = "Animated Backgrounds";
 var titleFontFamily = "Showcard Gothic Bold";
 var titleShadowOffset = new Point(1, 1);
@@ -25,7 +29,7 @@ var itemTitleShadowOffset = new Point(3, 3);
 
 var animation;
 var animationImage;
-var animationDestination = new Rectangle(340, 500, 100, 125);
+var animationDestination = new Rectangle(50, 500, 100, 125);
 
 var textRender;
 var paralaxBackgroundSlider;  
@@ -54,17 +58,31 @@ InitCharacterAnimation();
 Loop();
 
 
-function InitTextRender() {    
-    textRender = new TextRender();
-    textRender.AddTextElement(new TextElement("Contact me at:", "yellow", titleFontFamily, 50, 275, titleFontSize, titleShadowOffset));
-    textRender.AddTextElement(new TextElement("   jbrink386@gmail.com", "purple", titleFontFamily, 50, 335, 45, titleShadowOffset));    
+function resize() {
+    noticeCanvas.width = window.innerWidth;
+    noticeCanvas.height = window.innerHeight;
+    bounds = new Rectangle(0, 0, window.innerWidth, window.innerHeight);
+    InitTextRender();
+    InitCharacterAnimation();
+    paralaxBackgroundSlider.Backgrounds = [];
+    PopulateParalaxBackgrounds();
 }
 
-function InitCharacterAnimation() {    
-    var animationBottomMargin =  (bounds.H / 5);
-    var ycoord = bounds.H - animationBottomMargin - animationDestination.H;
+function InitTextRender() {    
+    textRender = new TextRender();
+    textRender.AddTextElement(new TextElement("Contact me at:", "yellow", titleFontFamily, 25, 200, titleFontSize, titleShadowOffset));
+    textRender.AddTextElement(new TextElement("jbrink386@gmail.com", "purple", titleFontFamily, 25, 230, titleFontSize, titleShadowOffset));    
+}
 
-    animationDestination = new Rectangle(340, ycoord, 100, 125);
+function InitCharacterAnimation() {        
+    var width = bounds.W < 768 ? 50 : 100;
+    var height = bounds.W < 768 ? 75 : 125;
+    var animationBottomMargin =  (bounds.H / 5);    
+    var ycoord = bounds.H - animationBottomMargin - height;
+
+    animationDestination = new Rectangle(200, ycoord, width, height);
+
+
     animationImage = new Image();
     animationImage.onload = function() {
         // image, speed, sourceMaxWidth, sourceMaxHeight, frameCols, frameRows, startingCol, startingRow
@@ -78,11 +96,13 @@ function InitCharacterAnimation() {
 
 
 function PopulateParalaxBackgrounds() {
-    paralaxBackgroundSlider.Backgrounds.push(
-        new ParalaxBackground(4, new Rectangle(0, 0, bounds.W + 4, bounds.H), 1, 2, 0, image));    
+    var increment = bounds.W < 768 ? 1 : 2;
 
     paralaxBackgroundSlider.Backgrounds.push(
-        new ParalaxBackground(4, new Rectangle(-bounds.W, 0, bounds.W + 4, bounds.H), 1, 2, 0, image));               
+        new ParalaxBackground(4, new Rectangle(0, 0, bounds.W + 4, bounds.H), 1, increment, 0, image));    
+
+    paralaxBackgroundSlider.Backgrounds.push(
+        new ParalaxBackground(4, new Rectangle(-bounds.W, 0, bounds.W + 4, bounds.H), 1, increment, 0, image));               
 };
 
 
