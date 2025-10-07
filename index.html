@@ -1,417 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to Jacobus' Neon Arcade - Experience interactive games in a cyberpunk arcade environment">
+    <meta name="author" content="Jacobus Brink">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Jacobus Online is my personal website where I share me with you">
-    <meta name="author" content="Jacobus Brink">    
-    
-    <meta property="og:title" content="Jacobus Online">  
-    <meta property="og:image:secure_url" content="https://jaxsbr.github.io/img/face.png">  
-    <meta property="og:description" content="Jacobus Online is my personal website where I share me with you">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jacobus' Neon Arcade">
+    <meta property="og:image:secure_url" content="https://jaxsbr.github.io/img/face.png">
+    <meta property="og:description"
+        content="Welcome to Jacobus' Neon Arcade - Experience interactive games in a cyberpunk arcade environment">
     <meta property="og:url" content="https://jaxsbr.github.io/">
 
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Jacobus' Neon Arcade</title>
 
-    <title>Jacobus Online</title>
+    <!-- Google Fonts for Cyberpunk Theme -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/neon-arcade.css">
+</head>
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Kumar One Outline" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">    
-
-</header>
-
-
-<body id="page-top">
-
-    <!-- Navigation Section -->
-
-    <nav class="navbar navbar-expand-lg bg-black fixed-top text-uppercase" id="mainNav">
+<body>
+    <!-- Neon Header Section -->
+    <header class="neon-header">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Jacobus online</a>            
-            <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#games">Games</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://jaxsbr.github.io/pkb-blog/">Blog</a>
-                    </li>
+            <nav class="neon-nav">
+                <div class="nav-logo">
+                    <span class="logo-text">JA</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#arcade" class="nav-link">Arcade</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="header-content">
+                <h1 class="neon-title">Welcome to Jacobus' Arcade</h1>
+                <p class="neon-subtitle">Enter the Digital Realm</p>
+                <div class="header-cta">
+                    <a href="#arcade" class="neon-button primary">Enter Arcade</a>
+                    <a href="#about" class="neon-button secondary">Learn More</a>
+                </div>
             </div>
         </div>
-    </nav>
-
-
-    <!-- Header Section-->
-
-    <header class="masthead bg-black-gradient text-white text-center">
-        <div class="container">
-            <!-- <img class="img-circle mb-5 d-block mx-auto" src="img/orb.png" alt=""> -->
-            <canvas id="headerCanvas"></canvas>
-            <h1 class="text-uppercase mb-0 text-4">Jacobus Brink</h1>
-            <!-- <hr class="star-light"> -->            
-            <h2 class="font-weight-medium mb-0 text-5">Software Engineer | Game Developer | Creative Maker</h2>
-        </div>
+        <div class="grid-background"></div>
+        <div class="tron-grid-advanced"></div>
+        <div class="tron-grid-pulse"></div>
+        <div class="particles-background"></div>
+        <div class="matrix-particles"></div>
     </header>
 
-    <!-- About -->
-    <section class="portfolio bg-orange-gradient" id="about">
+    <!-- Personal Section -->
+    <section id="about" class="personal-section scan-lines">
         <div class="container">
-            <h2 class="text-center text-uppercase text-1 mb-0 pb-5 content-header">About</h2>
-            <div class="row">
-                <div class="col-lg-12 ml-auto pb-3">
-                    <h3 class="text-black">Software Engineer</h3>
-                    <p class="lead text-1 text-plainfont">
-                        Software engineering is what I do for a living. 
-                        I am a generalist fullstack engineer and enjoy technical writing.
+            <div class="personal-content">
+                <div class="personal-info">
+                    <h2 class="section-title">About the Arcade</h2>
+                    <p class="personal-text">
+                        I'm a father, husband, and creative maker who loves building games and software.
+                        This arcade showcases my passion projects - interactive experiences that blend
+                        technology with creativity.
                     </p>
-                    <p class="lead text-1 text-plainfont">
-                        See my profession overview 
-                        <a class="text-white" href="https://jaxsbr.github.io/Portfolio/">here</a>
-                    </p>                    
-                </div>
-                <div class="col-lg-12 ml-auto pb-3">
-                    <h3 class="text-black">About Me</h3>
-                    <p class="lead text-1 text-plainfont">
-                        I'm a father and a husband and this brings joy to my life.                         
-                    </p>
-                    <p class="lead text-1 text-plainfont">
-                        At all times am thinking about and making things, be it software, games, woodworking, electronics and others.
-                    </p>
-                    <p class="lead text-1 text-plainfont">
-                        I also enjoy keeping aquarium fish and growing aquatic plants.
-                    </p>
-                    <div>
-                        <img style="max-width: 512px;" src="img/fam.jpg" alt="picture of Jacobus and his familiy"/>
+                    <div class="personal-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Games Built</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Years Creating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Passion</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-
-    <section class="portfolio bg-black-gradient" id="games">
-        <div class="container">
-            <h2 class="text-center text-uppercase text-white mb-0 pb-5 content-header">Games</h2>
-            <div class="row">
-                <div class="col-lg-12 ml-auto pb-3">
-                    <p class="lead text-white text-plainfont">I like to doodle in my free time. All these game samples
-                        are repositories on my Github page and serve as a quick lookup when I need examples. I hope to
-                        piece all these samples together in the future and release a free to play game to the public.
-                    </p>
-                    <!-- <p>
-                        I'm working on consolidating my best works into a fun game arcade.
-                        <a href="https://jaxsbr.github.io/game-arcade/">See the arcade here</a>
-                    </p> -->
-                </div>
-            </div>
-            <div class="row">                                
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-adventurerpg">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
+                    <div class="family-photo">
+                        <img src="img/fam.jpg" alt="Jacobus and his family" class="family-img">
+                        <div class="photo-overlay">
+                            <p class="photo-caption">My greatest creation</p>
                         </div>
-                        <img class="img-fluid" src="img/adventurerpg.png" alt="">
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-aibehavior">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/aiBehavior.png" alt="">
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-shuffle">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/shuffle.png" alt="">
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-robot">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/robot.png" alt="">
-                    </a>
-                </div>   
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-platformer">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/platformer.png" alt="">
-                    </a>
-                </div>                
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-towers">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/towersLogo.png" alt="">
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#games-modal-prototype1">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/prototype1.png" alt="">
-                    </a>
-                </div>     
-            </div>
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-
-    <!-- Games Modal Section -->
-
-    <div class="portfolio-modal mfp-hide" id="games-modal-adventurerpg">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">Adventure RPG</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/adventurerpg.png" alt="">
-                        <p class="mb-5">Simple mechanics for building an RPG framework. Typescript is used in this project.</p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/AdventureRPG/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="portfolio-modal mfp-hide" id="games-modal-towers">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">Towers</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/phaserTDTile.png" alt="">
-                        <p class="mb-5">Tower defense game using Typescript</p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/Towers/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-modal mfp-hide" id="games-modal-prototype1">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">Prototype1</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/prototype1.png" alt="">
-                        <p class="mb-5">Kiddie shapes prototype game</p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/Kids-Game-Prototype-1/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-modal mfp-hide" id="games-modal-aibehavior">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">AI Behavior</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/aiBehavior.png" alt="">
-                        <p class="mb-5">This AI behavior demo contain some real time strategy mechanics. 
-                            Map scrolling, tile grid rendering and custom bounds collision.
-                            Bots are generated by CPU entities. These bot enteties find and gather resources. 
-                            They are designed to find and harvest the closes resource and move on once depleted.
-                            I also added some mutation logic that would allow some bot to become self aware and eventualy break free from the parent CPU's control.
-                            The CPU entities can be selected and then toggle behaviors on it's menu. 
-                            Defence mode summon all bot's to stop harvesting and return to the CPU's area.</p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/AIBehavior/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="portfolio-modal mfp-hide" id="games-modal-shuffle">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">Image Shuffle</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/shuffle.png" alt="">
-                        <p class="mb-5">Simple puzzle game. Reshuffle the image back to it's original state.
-                        </p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/ImageShuffle/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="portfolio-modal mfp-hide" id="games-modal-robot">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="text-primary mb-5 robo-war-header">
-                            Robo War
-                        </h1>
-                        
-                        <!-- <hr class="star-dark mb-5"> -->
-                        <img class="mb-5 robo-war-image" src="img/robot.png" alt="">
-                        <a class="btn btn-primary btn-xlg rounded-pill robo-war-button-text" href="https://jaxsbr.github.io/RoboWar/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!
+                    <div class="portfolio-link">
+                        <a href="https://jaxsbr.github.io/Portfolio/" class="neon-link">
+                            View Professional Portfolio →
                         </a>
-                        <p class="mb-5 robo-war-description">
-                            W A S D - & - Mouse shootaim
-                        </p>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>     
-        
-    <div class="portfolio-modal mfp-hide" id="games-modal-platformer">
-        <div class="portfolio-modal-dialog bg-white">
-            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-                <i class="fa fa-3x fa-times"></i>
-            </a>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-secondary text-uppercase mb-0">Platformer</h2>
-                        <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="img/platformer.png" alt="">
-                        <p class="mb-5 text-primary">Platformer exmaple. 
-                            This was a great experience as I got create custom physics, collision and content loading.
-                        </p>
-                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/Platformer/">
-                            <i class="fa fa-play-circle"></i>
-                            Try It Out!</a>
-                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                            <i class="fa fa-close"></i>
-                            Close Project</a>                        
+    </section>
+
+    <!-- Arcade Games Section -->
+    <section id="arcade" class="arcade-section scan-lines">
+        <div class="container">
+            <div class="arcade-header">
+                <h2 class="section-title arcade-title">Choose Your Game</h2>
+                <p class="arcade-subtitle">Select an arcade cabinet to begin your digital adventure</p>
+                <div class="arcade-filters">
+                    <button class="filter-btn active" data-filter="all">All Games</button>
+                    <button class="filter-btn" data-filter="action">Action</button>
+                    <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+                    <button class="filter-btn" data-filter="strategy">Strategy</button>
+                </div>
+            </div>
+            <div class="arcade-grid">
+                <!-- Adventure RPG Cabinet -->
+                <div class="arcade-cabinet" data-game="adventure-rpg" data-category="strategy">
+                    <div class="cabinet-screen">
+                        <img src="img/adventurerpg.png" alt="Adventure RPG" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Adventure RPG</h3>
+                            <span class="device-label desktop">Desktop</span>
+                            <p class="game-description">TypeScript RPG Framework</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
                     </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- AI Behavior Cabinet -->
+                <div class="arcade-cabinet" data-game="ai-behavior" data-category="strategy">
+                    <div class="cabinet-screen">
+                        <img src="img/aiBehavior.png" alt="AI Behavior" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">AI Behavior</h3>
+                            <span class="device-label desktop">Desktop</span>
+                            <p class="game-description">Real-time Strategy with Bot AI</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- Image Shuffle Cabinet -->
+                <div class="arcade-cabinet" data-game="image-shuffle" data-category="puzzle">
+                    <div class="cabinet-screen">
+                        <img src="img/shuffle.png" alt="Image Shuffle" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Image Shuffle</h3>
+                            <span class="device-label both">Any Device</span>
+                            <p class="game-description">Simple Puzzle Game</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- Robo War Cabinet -->
+                <div class="arcade-cabinet" data-game="robo-war" data-category="action">
+                    <div class="cabinet-screen">
+                        <img src="img/robot.png" alt="Robo War" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Robo War</h3>
+                            <span class="device-label desktop">Desktop</span>
+                            <p class="game-description">WASD + Mouse Shooter</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- Platformer Cabinet -->
+                <div class="arcade-cabinet" data-game="platformer" data-category="action">
+                    <div class="cabinet-screen">
+                        <img src="img/platformer.png" alt="Platformer" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Platformer</h3>
+                            <span class="device-label desktop">Desktop</span>
+                            <p class="game-description">Custom Physics Platformer</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- CuteDefense Cabinet -->
+                <div class="arcade-cabinet" data-game="cutedefense" data-category="strategy">
+                    <div class="cabinet-screen">
+                        <img src="img/cutedefense.png" alt="CuteDefense" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">CuteDefense</h3>
+                            <span class="device-label both">Any Device</span>
+                            <p class="game-description">Tower Defense Game</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- Prototype1 Cabinet -->
+                <div class="arcade-cabinet" data-game="prototype1" data-category="puzzle">
+                    <div class="cabinet-screen">
+                        <img src="img/prototype1.png" alt="Prototype1" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Prototype1</h3>
+                            <span class="device-label both">Any Device</span>
+                            <p class="game-description">Kids Shapes Game</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
                 </div>
             </div>
         </div>
-    </div>    
+    </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="neon-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2024 Jacobus Brink - Digital Arcade</p>
+                <div class="social-links">
+                    <a href="https://github.com/jaxsbr" class="social-link">GitHub</a>
+                    <a href="https://jaxsbr.github.io/pkb-blog/" class="social-link">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Game Modal -->
+    <div id="game-modal" class="game-modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <span id="modal-device-label" class="device-label"></span>
+                <p id="modal-description" class="modal-description"></p>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="" class="modal-image">
+            </div>
+            <div class="modal-footer">
+                <a id="play-link" href="#" class="neon-button" target="_blank">
+                    <i class="play-icon">▶</i> Play Now
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-    <script src="js/headerCanvas.js"></script>
-    <script src="js/utils.js"></script>    
-    <script src="js/example.js"></script>
-
+    <!-- Custom JavaScript -->
+    <script src="src/js/neon-arcade.js"></script>
 </body>
 
 </html>

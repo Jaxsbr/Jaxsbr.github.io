@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Jacobus Online is my personal website where I share me with you">
+    <meta name="author" content="Jacobus Brink">
+
+    <meta property="og:title" content="Jacobus Online">
+    <meta property="og:image:secure_url" content="https://jaxsbr.github.io/img/face.png">
+    <meta property="og:description" content="Jacobus Online is my personal website where I share me with you">
+    <meta property="og:url" content="https://jaxsbr.github.io/">
+
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Jacobus Online</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Kumar One Outline" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+</header>
+
+
+<body id="page-top">
+
+    <!-- Navigation Section -->
+
+    <nav class="navbar navbar-expand-lg bg-black fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Jacobus online</a>
+            <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#games">Games</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="https://jaxsbr.github.io/pkb-blog/">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Header Section-->
+
+    <header class="masthead bg-black-gradient text-white text-center">
+        <div class="container">
+            <!-- <img class="img-circle mb-5 d-block mx-auto" src="img/orb.png" alt=""> -->
+            <canvas id="headerCanvas"></canvas>
+            <h1 class="text-uppercase mb-0 text-4">Jacobus Brink</h1>
+            <!-- <hr class="star-light"> -->
+            <h2 class="font-weight-medium mb-0 text-5">Software Engineer | Game Developer | Creative Maker</h2>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="portfolio bg-orange-gradient" id="about">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-1 mb-0 pb-5 content-header">About</h2>
+            <div class="row">
+                <div class="col-lg-12 ml-auto pb-3">
+                    <h3 class="text-black">Software Engineer</h3>
+                    <p class="lead text-1 text-plainfont">
+                        Software engineering is what I do for a living.
+                        I am a generalist fullstack engineer and enjoy technical writing.
+                    </p>
+                    <p class="lead text-1 text-plainfont">
+                        See my profession overview
+                        <a class="text-white" href="https://jaxsbr.github.io/Portfolio/">here</a>
+                    </p>
+                </div>
+                <div class="col-lg-12 ml-auto pb-3">
+                    <h3 class="text-black">About Me</h3>
+                    <p class="lead text-1 text-plainfont">
+                        I'm a father and a husband and this brings joy to my life.
+                    </p>
+                    <p class="lead text-1 text-plainfont">
+                        At all times am thinking about and making things, be it software, games, woodworking,
+                        electronics and others.
+                    </p>
+                    <p class="lead text-1 text-plainfont">
+                        I also enjoy keeping aquarium fish and growing aquatic plants.
+                    </p>
+                    <div>
+                        <img style="max-width: 512px;" src="img/fam.jpg" alt="picture of Jacobus and his familiy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+
+    <section class="portfolio bg-black-gradient" id="games">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-white mb-0 pb-5 content-header">Games</h2>
+            <div class="row">
+                <div class="col-lg-12 ml-auto pb-3">
+                    <p class="lead text-white text-plainfont">I like to doodle in my free time. All these game samples
+                        are repositories on my Github page and serve as a quick lookup when I need examples. I hope to
+                        piece all these samples together in the future and release a free to play game to the public.
+                    </p>
+                    <!-- <p>
+                        I'm working on consolidating my best works into a fun game arcade.
+                        <a href="https://jaxsbr.github.io/game-arcade/">See the arcade here</a>
+                    </p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-adventurerpg">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/adventurerpg.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-aibehavior">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/aiBehavior.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-shuffle">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/shuffle.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-robot">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/robot.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-platformer">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/platformer.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-towers">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/cutedefense.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a class="portfolio-item d-block mx-auto" href="#games-modal-prototype1">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/prototype1.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+
+    <!-- Games Modal Section -->
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-adventurerpg">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">Adventure RPG</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/adventurerpg.png" alt="">
+                        <p class="mb-5">Simple mechanics for building an RPG framework. Typescript is used in this
+                            project.</p>
+                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/AdventureRPG/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-towers">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">CuteDefense</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/cutedefense.png" alt="">
+                        <p class="mb-5">Tower defense game with cute graphics and strategic gameplay</p>
+                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/CuteDefense/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-prototype1">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">Prototype1</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/prototype1.png" alt="">
+                        <p class="mb-5">Kiddie shapes prototype game</p>
+                        <a class="btn btn-primary btn-lg rounded-pill"
+                            href="https://jaxsbr.github.io/Kids-Game-Prototype-1/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-aibehavior">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">AI Behavior</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/aiBehavior.png" alt="">
+                        <p class="mb-5">This AI behavior demo contain some real time strategy mechanics.
+                            Map scrolling, tile grid rendering and custom bounds collision.
+                            Bots are generated by CPU entities. These bot enteties find and gather resources.
+                            They are designed to find and harvest the closes resource and move on once depleted.
+                            I also added some mutation logic that would allow some bot to become self aware and
+                            eventualy break free from the parent CPU's control.
+                            The CPU entities can be selected and then toggle behaviors on it's menu.
+                            Defence mode summon all bot's to stop harvesting and return to the CPU's area.</p>
+                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/AIBehavior/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-shuffle">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">Image Shuffle</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/shuffle.png" alt="">
+                        <p class="mb-5">Simple puzzle game. Reshuffle the image back to it's original state.
+                        </p>
+                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/ImageShuffle/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-robot">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="text-primary mb-5 robo-war-header">
+                            Robo War
+                        </h1>
+
+                        <!-- <hr class="star-dark mb-5"> -->
+                        <img class="mb-5 robo-war-image" src="img/robot.png" alt="">
+                        <a class="btn btn-primary btn-xlg rounded-pill robo-war-button-text"
+                            href="https://jaxsbr.github.io/RoboWar/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!
+                        </a>
+                        <p class="mb-5 robo-war-description">
+                            W A S D - & - Mouse shootaim
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal mfp-hide" id="games-modal-platformer">
+        <div class="portfolio-modal-dialog bg-white">
+            <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
+                <i class="fa fa-3x fa-times"></i>
+            </a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-secondary text-uppercase mb-0">Platformer</h2>
+                        <hr class="star-dark mb-5">
+                        <img class="img-fluid mb-5" src="img/platformer.png" alt="">
+                        <p class="mb-5 text-primary">Platformer exmaple.
+                            This was a great experience as I got create custom physics, collision and content loading.
+                        </p>
+                        <a class="btn btn-primary btn-lg rounded-pill" href="https://jaxsbr.github.io/Platformer/">
+                            <i class="fa fa-play-circle"></i>
+                            Try It Out!</a>
+                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                            <i class="fa fa-close"></i>
+                            Close Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+    <script src="js/headerCanvas.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/example.js"></script>
+
+</body>
+
+</html>
