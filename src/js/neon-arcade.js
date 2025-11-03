@@ -53,6 +53,13 @@ const gameData = {
         url: 'https://jaxsbr.github.io/Kids-Game-Prototype-1/',
         image: 'img/prototype1.png',
         deviceType: 'both' // Touch-friendly and works on desktop
+    },
+    'jank': {
+        title: 'Jank',
+        description: 'Arena defense game where you control a powerful stationary core. Defend against enemy waves with energy arcs and pulses over a hexagonal hive.',
+        url: 'https://jaxsbr.github.io/Jank/',
+        image: 'img/jank.png',
+        deviceType: 'both' // Touch-friendly and works on desktop
     }
 };
 
