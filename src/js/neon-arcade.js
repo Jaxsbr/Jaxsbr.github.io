@@ -60,6 +60,13 @@ const gameData = {
         url: 'https://jaxsbr.github.io/Jank/',
         image: 'img/jank.png',
         deviceType: 'both' // Touch-friendly and works on desktop
+    },
+    'botanica': {
+        title: 'Botanica',
+        description: 'A semi-realistic gardening simulation with economic progression - tend plants through their full lifecycle, manage soil chemistry, and build your garden operation from a single avocado plant into a thriving botanical business.',
+        url: 'https://jaxsbr.github.io/Botanica/',
+        image: 'img/botanica.png',
+        deviceType: 'both' // Touch-friendly and works on desktop
     }
 };
 
