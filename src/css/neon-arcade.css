@@ -1266,6 +1266,15 @@ body {
     white-space: nowrap;
 }
 
+.era-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--neon-gray);
+    font-style: italic;
+    margin: calc(-1 * var(--spacing-sm)) 0 var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+}
+
 /* ========================================
    FOOTER
    ======================================== */
