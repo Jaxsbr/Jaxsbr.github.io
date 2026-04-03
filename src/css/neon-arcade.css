@@ -1083,6 +1083,199 @@ body {
 }
 
 /* ========================================
+   WHAT DRIVES ME
+   ======================================== */
+
+.drives-me {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--neon-purple);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.drives-me-title {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--neon-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.drives-me-text {
+    font-size: 1rem;
+    color: var(--neon-gray-light);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+
+.projects-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--neon-black);
+    position: relative;
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.projects-title {
+    color: var(--neon-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.projects-subtitle {
+    font-size: 1.1rem;
+    color: var(--neon-gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--neon-dark);
+    border: 2px solid var(--neon-blue);
+    border-radius: 15px;
+    padding: var(--spacing-md);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-card:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink), 0 0 30px rgba(255, 0, 128, 0.2);
+    transform: translateY(-5px);
+}
+
+.project-name {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-card:hover .project-name {
+    color: var(--neon-pink);
+    text-shadow: var(--neon-shadow-pink);
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: var(--neon-gray-light);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--neon-blue);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.project-link-label {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--neon-pink);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-link-label {
+    color: var(--neon-pink-bright);
+    text-shadow: var(--neon-shadow-pink);
+}
+
+/* ========================================
+   ERA DIVIDERS (Arcade Timeline)
+   ======================================== */
+
+.era-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.era-divider::before,
+.era-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+    opacity: 0.4;
+}
+
+.era-label {
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+    color: var(--neon-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+}
+
+.era-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--neon-gray);
+    font-style: italic;
+    margin: calc(-1 * var(--spacing-sm)) 0 var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 
@@ -1309,6 +1502,11 @@ body {
     .stat-item {
         width: 100%;
         max-width: 200px;
+    }
+
+    /* Projects Grid Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
     /* Arcade Grid Mobile */
