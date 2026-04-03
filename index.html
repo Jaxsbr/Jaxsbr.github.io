@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Welcome to Jacobus' Neon Arcade - Experience interactive games in a cyberpunk arcade environment">
+        content="Senior product engineer building autonomous workflows, MCP-integrated tools, and games. Follow the journey.">
     <meta name="author" content="Jacobus Brink">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jacobus' Neon Arcade">
+    <meta property="og:title" content="Jacobus Brink — Engineer, Maker, Builder">
     <meta property="og:image:secure_url" content="https://jaxsbr.github.io/img/face.png">
     <meta property="og:description"
-        content="Welcome to Jacobus' Neon Arcade - Experience interactive games in a cyberpunk arcade environment">
+        content="Senior product engineer building autonomous workflows, MCP-integrated tools, and games. Follow the journey.">
     <meta property="og:url" content="https://jaxsbr.github.io/">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <title>Jacobus' Neon Arcade</title>
+    <title>Jacobus Brink — Engineer, Maker, Builder</title>
 
     <!-- Google Fonts for Cyberpunk Theme -->
     <link
@@ -33,13 +33,14 @@
         <div class="container">
             <nav class="neon-nav">
                 <div class="nav-logo">
-                    <span class="logo-text">JA</span>
+                    <span class="logo-text">JB</span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#arcade" class="nav-link">Arcade</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="https://jaxsbr.github.io/Blog/" class="nav-link" target="_blank">Blog</a>
-                    </li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#arcade" class="nav-link">Arcade</a></li>
+                    <li><a href="https://jaxsbr.github.io/Blog/" class="nav-link" target="_blank">Blog</a></li>
+                    <li><a href="https://github.com/jaxsbr" class="nav-link" target="_blank">GitHub</a></li>
                 </ul>
                 <div class="nav-toggle">
                     <span></span>
@@ -48,11 +49,12 @@
                 </div>
             </nav>
             <div class="header-content">
-                <h1 class="neon-title">Welcome to Jacobus' Arcade</h1>
-                <p class="neon-subtitle">Enter the Digital Realm</p>
+                <h1 class="neon-title">Jacobus' Arcade</h1>
+                <p class="neon-subtitle">Engineer · Maker · Builder</p>
                 <div class="header-cta">
-                    <a href="#arcade" class="neon-button primary">Enter Arcade</a>
-                    <a href="#about" class="neon-button secondary">Learn More</a>
+                    <a href="#projects" class="neon-button primary">See Projects</a>
+                    <a href="https://jaxsbr.github.io/Blog/" class="neon-button secondary" target="_blank">Read
+                        Blog</a>
                 </div>
             </div>
         </div>
@@ -63,16 +65,20 @@
         <div class="matrix-particles"></div>
     </header>
 
-    <!-- Personal Section -->
+    <!-- About Section -->
     <section id="about" class="personal-section scan-lines">
         <div class="container">
             <div class="personal-content">
                 <div class="personal-info">
-                    <h2 class="section-title">About the Arcade</h2>
+                    <h2 class="section-title">About Me</h2>
                     <p class="personal-text">
-                        I'm a follower of Jesus, father, husband, and creative maker who loves building games and
-                        software.
-                        This arcade showcases some prototype and fun game doodles.
+                        I'm Jacobus — a senior product engineer who builds systems that make engineering teams
+                        dramatically more effective. I design autonomous build workflows, MCP-integrated
+                        knowledge tools, and compound engineering practices.
+                    </p>
+                    <p class="personal-text">
+                        I'm also a follower of Jesus, a father, a husband, and a creative maker who builds
+                        games and software for the joy of it.
                     </p>
                     <div class="family-photo">
                         <img src="img/fam.jpg" alt="Jacobus and his family" class="family-img">
@@ -80,22 +86,80 @@
                             <p class="photo-caption"></p>
                         </div>
                     </div>
-                    <div class="portfolio-link">
-                        <a href="https://jaxsbr.github.io/Blog/" class="neon-link">
-                            Read Blog →
-                        </a>
+                    <div class="drives-me">
+                        <h3 class="drives-me-title">What Drives Me</h3>
+                        <p class="drives-me-text">
+                            My work is grounded in a conviction that building well is an act of stewardship.
+                            I follow Jesus, and that shapes how I approach craft, people, and purpose.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Arcade Games Section -->
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section scan-lines">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="section-title projects-title">What I'm Building</h2>
+                <p class="projects-subtitle">Current engineering projects and open-source work</p>
+            </div>
+            <div class="projects-grid">
+                <a href="https://github.com/Jaxsbr/mustard" class="project-card" target="_blank">
+                    <h3 class="project-name">mustard</h3>
+                    <p class="project-desc">Personal knowledge graph — MCP server, CLI, and TUI.
+                        SQLite-backed with full-text search and context retrieval via graph traversal.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">TypeScript</span>
+                        <span class="project-tag">MCP</span>
+                        <span class="project-tag">SQLite</span>
+                    </div>
+                    <span class="project-link-label">View on GitHub →</span>
+                </a>
+                <a href="https://github.com/Jaxsbr/flow-mo" class="project-card" target="_blank">
+                    <h3 class="project-name">flow-mo</h3>
+                    <p class="project-desc">YAML-source-of-truth diagram editor with VS Code extension.
+                        Drag, connect, and edit flowcharts with React Flow.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">VS Code</span>
+                        <span class="project-tag">YAML</span>
+                    </div>
+                    <span class="project-link-label">View on GitHub →</span>
+                </a>
+                <a href="https://jaxsbr.github.io/math-practice/" class="project-card" target="_blank">
+                    <h3 class="project-name">math-practice</h3>
+                    <p class="project-desc">Shipped educational math game for kids aged 6-12.
+                        Six operation paths with star-based progression and adventure map UI.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Education</span>
+                        <span class="project-tag">Shipped</span>
+                    </div>
+                    <span class="project-link-label">Play Live Demo →</span>
+                </a>
+                <a href="https://jaxsbr.github.io/Blog/" class="project-card" target="_blank">
+                    <h3 class="project-name">Build System</h3>
+                    <p class="project-desc">Semi-autonomous build loop — spec to shipping with quality gates,
+                        automated retrospectives, and regression detection. 44+ documented learnings.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Agentic</span>
+                        <span class="project-tag">CI/CD</span>
+                        <span class="project-tag">Compound</span>
+                    </div>
+                    <span class="project-link-label">Read on Blog →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Lab (Arcade Games) Section -->
     <section id="arcade" class="arcade-section scan-lines">
         <div class="container">
             <div class="arcade-header">
-                <h2 class="section-title arcade-title">Choose Your Game</h2>
-                <p class="arcade-subtitle">Select an arcade cabinet to begin your digital adventure</p>
+                <h2 class="section-title arcade-title">Creative Lab</h2>
+                <p class="arcade-subtitle">Games and experiments — where I started, and what I still build for fun</p>
                 <div class="arcade-filters">
                     <button class="filter-btn active" data-filter="all">All Games</button>
                     <button class="filter-btn" data-filter="action">Action</button>
@@ -103,7 +167,46 @@
                     <button class="filter-btn" data-filter="strategy">Strategy</button>
                 </div>
             </div>
-            <div class="arcade-grid">
+
+            <!-- Recent Games -->
+            <div class="era-divider">
+                <span class="era-label">Recent</span>
+            </div>
+            <div class="arcade-grid" id="arcade-grid-recent">
+                <!-- Jank Cabinet -->
+                <div class="arcade-cabinet" data-game="jank" data-category="action">
+                    <div class="cabinet-screen">
+                        <img src="img/jank.png" alt="Jank" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Jank</h3>
+                            <span class="device-label both">Any Device</span>
+                            <p class="game-description">Arena Defense</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+
+                <!-- Botanica Cabinet -->
+                <div class="arcade-cabinet" data-game="botanica" data-category="strategy">
+                    <div class="cabinet-screen">
+                        <img src="img/botanica.png" alt="Botanica" class="game-preview">
+                        <div class="cabinet-overlay">
+                            <h3 class="game-title">Botanica</h3>
+                            <span class="device-label both">Any Device</span>
+                            <p class="game-description">Plant Growth Simulator</p>
+                            <button class="play-button">PLAY</button>
+                        </div>
+                    </div>
+                    <div class="cabinet-base"></div>
+                </div>
+            </div>
+
+            <!-- Early Experiments -->
+            <div class="era-divider">
+                <span class="era-label">Early Experiments</span>
+            </div>
+            <div class="arcade-grid" id="arcade-grid-early">
                 <!-- Adventure RPG Cabinet -->
                 <div class="arcade-cabinet" data-game="adventure-rpg" data-category="strategy">
                     <div class="cabinet-screen">
@@ -201,34 +304,6 @@
                     </div>
                     <div class="cabinet-base"></div>
                 </div>
-
-                <!-- Jank Cabinet -->
-                <div class="arcade-cabinet" data-game="jank" data-category="action">
-                    <div class="cabinet-screen">
-                        <img src="img/jank.png" alt="Jank" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Jank</h3>
-                            <span class="device-label both">Any Device</span>
-                            <p class="game-description">Arena Defense</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Botanica Cabinet -->
-                <div class="arcade-cabinet" data-game="botanica" data-category="strategy">
-                    <div class="cabinet-screen">
-                        <img src="img/botanica.png" alt="Botanica" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Botanica</h3>
-                            <span class="device-label both">Any Device</span>
-                            <p class="game-description">Plant Growth Simulator</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
             </div>
         </div>
     </section>
@@ -237,10 +312,11 @@
     <footer class="neon-footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-text">© 2024 Jacobus Brink - Digital Arcade</p>
+                <p class="footer-text">&copy; <span id="current-year"></span> Jacobus Brink</p>
                 <div class="social-links">
-                    <a href="https://github.com/jaxsbr" class="social-link">GitHub</a>
-                    <a href="https://jaxsbr.github.io/Blog/" class="social-link">Blog</a>
+                    <a href="https://github.com/jaxsbr" class="social-link" target="_blank">GitHub</a>
+                    <a href="https://jaxsbr.github.io/Blog/" class="social-link" target="_blank">Blog</a>
+                    <a href="https://www.linkedin.com/in/jaco-brink/" class="social-link" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -260,7 +336,7 @@
             </div>
             <div class="modal-footer">
                 <a id="play-link" href="#" class="neon-button" target="_blank">
-                    <i class="play-icon">▶</i> Play Now
+                    <i class="play-icon">&#9654;</i> Play Now
                 </a>
             </div>
         </div>
@@ -268,6 +344,10 @@
 
     <!-- Custom JavaScript -->
     <script src="src/js/neon-arcade.js"></script>
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

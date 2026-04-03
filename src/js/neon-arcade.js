@@ -657,7 +657,8 @@ function setupNavigation() {
 function setupFiltering() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const cabinets = document.querySelectorAll('.arcade-cabinet');
-    const grid = document.querySelector('.arcade-grid');
+    const grids = document.querySelectorAll('.arcade-grid');
+    const eraDividers = document.querySelectorAll('.era-divider');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function () {
@@ -667,44 +668,59 @@ function setupFiltering() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            // Add filtered class to grid
-            grid.classList.add('filtered');
-
-            // Filter cabinets and reorganize
-            let visibleCount = 0;
+            // Filter cabinets across all grids
             cabinets.forEach(cabinet => {
                 const category = cabinet.getAttribute('data-category');
 
                 if (filter === 'all' || category === filter) {
                     cabinet.classList.remove('hidden');
                     cabinet.classList.add('visible');
-                    visibleCount++;
                 } else {
                     cabinet.classList.add('hidden');
                     cabinet.classList.remove('visible');
                 }
             });
 
-            // Update grid layout based on visible games
-            if (visibleCount === 0) {
-                grid.style.gridTemplateColumns = '1fr';
-                grid.style.justifyContent = 'center';
-            } else if (visibleCount === 1) {
-                grid.style.gridTemplateColumns = '1fr';
-                grid.style.justifyContent = 'center';
-            } else if (visibleCount === 2) {
-                grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                grid.style.justifyContent = 'center';
-            } else {
-                grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
-                grid.style.justifyContent = 'start';
-            }
+            // Show/hide era dividers based on whether their grid has visible cabinets
+            eraDividers.forEach(divider => {
+                const nextGrid = divider.nextElementSibling;
+                if (nextGrid && nextGrid.classList.contains('arcade-grid')) {
+                    const visibleInGrid = nextGrid.querySelectorAll('.arcade-cabinet:not(.hidden)').length;
+                    divider.style.display = visibleInGrid > 0 ? '' : 'none';
+                    nextGrid.style.display = visibleInGrid > 0 ? '' : 'none';
+                }
+            });
 
-            // Animate grid layout
-            grid.style.opacity = '0.5';
-            setTimeout(() => {
-                grid.style.opacity = '1';
-            }, 150);
+            // Update each grid layout
+            grids.forEach(grid => {
+                grid.classList.add('filtered');
+                const visibleInGrid = grid.querySelectorAll('.arcade-cabinet:not(.hidden)').length;
+
+                if (visibleInGrid <= 2) {
+                    grid.style.gridTemplateColumns = visibleInGrid === 0 ? '1fr' : `repeat(${visibleInGrid}, 1fr)`;
+                    grid.style.justifyContent = 'center';
+                } else {
+                    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+                    grid.style.justifyContent = 'start';
+                }
+
+                // Animate grid layout
+                grid.style.opacity = '0.5';
+                setTimeout(() => {
+                    grid.style.opacity = '1';
+                }, 150);
+            });
+
+            // Reset era dividers and grids when showing all
+            if (filter === 'all') {
+                eraDividers.forEach(d => d.style.display = '');
+                grids.forEach(g => {
+                    g.style.display = '';
+                    g.style.gridTemplateColumns = '';
+                    g.style.justifyContent = '';
+                    g.classList.remove('filtered');
+                });
+            }
         });
     });
 }
