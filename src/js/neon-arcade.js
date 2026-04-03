@@ -674,13 +674,22 @@ function setupFiltering() {
                 }
             });
 
-            // Show/hide era dividers based on whether their grid has visible cabinets
+            // Show/hide era dividers (and any subtitle between divider and grid) based on visible cabinets
             eraDividers.forEach(divider => {
-                const nextGrid = divider.nextElementSibling;
-                if (nextGrid && nextGrid.classList.contains('arcade-grid')) {
-                    const visibleInGrid = nextGrid.querySelectorAll('.arcade-cabinet:not(.hidden)').length;
-                    divider.style.display = visibleInGrid > 0 ? '' : 'none';
-                    nextGrid.style.display = visibleInGrid > 0 ? '' : 'none';
+                let sibling = divider.nextElementSibling;
+                const related = [];
+                // Collect siblings between divider and grid (e.g. era-subtitle paragraphs)
+                while (sibling && !sibling.classList.contains('arcade-grid')) {
+                    related.push(sibling);
+                    sibling = sibling.nextElementSibling;
+                }
+                const grid = sibling;
+                if (grid && grid.classList.contains('arcade-grid')) {
+                    const visibleInGrid = grid.querySelectorAll('.arcade-cabinet:not(.hidden)').length;
+                    const show = visibleInGrid > 0;
+                    divider.style.display = show ? '' : 'none';
+                    related.forEach(el => el.style.display = show ? '' : 'none');
+                    grid.style.display = show ? '' : 'none';
                 }
             });
 
