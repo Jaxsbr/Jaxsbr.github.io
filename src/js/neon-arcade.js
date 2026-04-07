@@ -60,6 +60,13 @@ const gameData = {
         url: 'https://jaxsbr.github.io/Botanica/',
         image: 'img/botanica.png',
         deviceType: 'both' // Touch-friendly and works on desktop
+    },
+    'zombo': {
+        title: 'Toy Box Siege',
+        description: 'Bedroom-themed tower defense — deploy toy defenders like water pistols, jack-in-the-boxes and glitter bombs to fend off dust bunnies, cleaning robots and a mega mop boss across 10 levels.',
+        url: 'https://jaxsbr.github.io/zombo/',
+        image: 'img/zombo.png',
+        deviceType: 'both' // Touch-friendly and works on desktop
     }
 };
 
