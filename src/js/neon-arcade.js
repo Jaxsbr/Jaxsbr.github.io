@@ -534,7 +534,7 @@ function showLoadingState() {
     loadingOverlay.innerHTML = `
     <div class="loading-content">
       <div class="loading-spinner"></div>
-      <p class="loading-text">Loading Arcade...</p>
+      <p class="loading-text">Loading Creative Lab...</p>
     </div>
   `;
 
