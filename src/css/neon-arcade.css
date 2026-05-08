@@ -985,6 +985,17 @@ body {
     margin-bottom: var(--spacing-xs);
 }
 
+/* Always-visible device chip in cabinet corner */
+.cabinet-screen > .device-label {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    margin: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
 .device-label.mobile {
     background: rgba(0, 255, 0, 0.2);
     color: var(--neon-green);
