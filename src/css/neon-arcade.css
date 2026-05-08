@@ -813,42 +813,6 @@ body {
     margin-right: auto;
 }
 
-/* Arcade Filters */
-.arcade-filters {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-    margin-bottom: var(--spacing-lg);
-}
-
-.filter-btn {
-    background: transparent;
-    border: 2px solid var(--neon-gray);
-    color: var(--neon-gray);
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: 25px;
-    font-family: var(--font-secondary);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.filter-btn:hover {
-    border-color: var(--neon-blue);
-    color: var(--neon-blue);
-    box-shadow: 0 0 10px var(--neon-blue);
-}
-
-.filter-btn.active {
-    background: var(--neon-blue);
-    border-color: var(--neon-blue);
-    color: var(--neon-black);
-    box-shadow: var(--neon-shadow-blue);
-}
-
 .arcade-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1238,44 +1202,6 @@ body {
 }
 
 /* ========================================
-   ERA DIVIDERS (Arcade Timeline)
-   ======================================== */
-
-.era-divider {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0 var(--spacing-md);
-}
-
-.era-divider::before,
-.era-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
-    opacity: 0.4;
-}
-
-.era-label {
-    font-family: var(--font-primary);
-    font-size: 0.75rem;
-    color: var(--neon-purple);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    white-space: nowrap;
-}
-
-.era-subtitle {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--neon-gray);
-    font-style: italic;
-    margin: calc(-1 * var(--spacing-sm)) 0 var(--spacing-md);
-    padding: 0 var(--spacing-sm);
-}
-
-/* ========================================
    FOOTER
    ======================================== */
 
@@ -1513,16 +1439,6 @@ body {
     .arcade-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
-    }
-
-    .arcade-filters {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .filter-btn {
-        width: 150px;
-        text-align: center;
     }
 
     /* Footer Mobile */

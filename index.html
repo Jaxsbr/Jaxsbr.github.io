@@ -39,7 +39,7 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#apps" class="nav-link">Apps</a></li>
-                    <li><a href="#arcade" class="nav-link">Creative Lab</a></li>
+                    <li><a href="#arcade" class="nav-link">Arcade</a></li>
                     <li><a href="https://jaxsbr.github.io/Blog/" class="nav-link" target="_blank">Blog</a></li>
                     <li><a href="https://github.com/jaxsbr" class="nav-link" target="_blank">GitHub</a></li>
                 </ul>
@@ -207,23 +207,13 @@
     <section id="arcade" class="arcade-section scan-lines">
         <div class="container">
             <div class="arcade-header">
-                <h2 class="section-title arcade-title">Creative Lab</h2>
-                <p class="arcade-subtitle">Games and experiments — where I started, and what I still build for fun</p>
-                <div class="arcade-filters">
-                    <button class="filter-btn active" data-filter="all">All Games</button>
-                    <button class="filter-btn" data-filter="action">Action</button>
-                    <button class="filter-btn" data-filter="puzzle">Puzzle</button>
-                    <button class="filter-btn" data-filter="strategy">Strategy</button>
-                </div>
+                <h2 class="section-title arcade-title">The Arcade</h2>
+                <p class="arcade-subtitle">A curated cabinet of games I've built — all playable, all yours to try</p>
             </div>
 
-            <!-- Recent Games -->
-            <div class="era-divider">
-                <span class="era-label">Recent</span>
-            </div>
-            <div class="arcade-grid" id="arcade-grid-recent">
-                <!-- Zombo Cabinet -->
-                <div class="arcade-cabinet" data-game="toy-box-siege" data-category="strategy">
+            <div class="arcade-grid">
+                <!-- Toy Box Siege Cabinet -->
+                <div class="arcade-cabinet" data-game="toy-box-siege">
                     <div class="cabinet-screen">
                         <img src="img/toy-box-siege.png" alt="Toy Box Siege" class="game-preview">
                         <div class="cabinet-overlay">
@@ -236,42 +226,36 @@
                     <div class="cabinet-base"></div>
                 </div>
 
-                <!-- Jank Cabinet -->
-                <div class="arcade-cabinet" data-game="jank" data-category="action">
+                <!-- Emberpath Cabinet -->
+                <div class="arcade-cabinet" data-game="emberpath">
                     <div class="cabinet-screen">
-                        <img src="img/jank.png" alt="Jank" class="game-preview">
+                        <img src="img/emberpath.png" alt="Emberpath" class="game-preview">
                         <div class="cabinet-overlay">
-                            <h3 class="game-title">Jank</h3>
+                            <h3 class="game-title">Emberpath</h3>
                             <span class="device-label both">Any Device</span>
-                            <p class="game-description">Arena Defense</p>
+                            <p class="game-description">Top-Down Adventure</p>
                             <button class="play-button">PLAY</button>
                         </div>
                     </div>
                     <div class="cabinet-base"></div>
                 </div>
 
-                <!-- Botanica Cabinet -->
-                <div class="arcade-cabinet" data-game="botanica" data-category="strategy">
+                <!-- Vylux Cabinet -->
+                <div class="arcade-cabinet" data-game="vylux">
                     <div class="cabinet-screen">
-                        <img src="img/botanica.png" alt="Botanica" class="game-preview">
+                        <img src="img/vylux.png" alt="Vylux" class="game-preview">
                         <div class="cabinet-overlay">
-                            <h3 class="game-title">Botanica</h3>
-                            <span class="device-label both">Any Device</span>
-                            <p class="game-description">Plant Growth Simulator</p>
+                            <h3 class="game-title">Vylux</h3>
+                            <span class="device-label desktop">Desktop</span>
+                            <p class="game-description">Tron-Inspired RTS</p>
                             <button class="play-button">PLAY</button>
                         </div>
                     </div>
                     <div class="cabinet-base"></div>
                 </div>
-            </div>
 
-            <!-- Playable Classics -->
-            <div class="era-divider">
-                <span class="era-label">Playable Classics</span>
-            </div>
-            <div class="arcade-grid" id="arcade-grid-playable">
                 <!-- Robo War Cabinet -->
-                <div class="arcade-cabinet" data-game="robo-war" data-category="action">
+                <div class="arcade-cabinet" data-game="robo-war">
                     <div class="cabinet-screen">
                         <img src="img/robot.png" alt="Robo War" class="game-preview">
                         <div class="cabinet-overlay">
@@ -285,76 +269,13 @@
                 </div>
 
                 <!-- CuteDefense Cabinet -->
-                <div class="arcade-cabinet" data-game="cutedefense" data-category="strategy">
+                <div class="arcade-cabinet" data-game="cutedefense">
                     <div class="cabinet-screen">
                         <img src="img/cutedefense.png" alt="CuteDefense" class="game-preview">
                         <div class="cabinet-overlay">
                             <h3 class="game-title">CuteDefense</h3>
                             <span class="device-label both">Any Device</span>
                             <p class="game-description">Tower Defense Game</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-            </div>
-
-            <!-- Early Experiments — nostalgia -->
-            <div class="era-divider">
-                <span class="era-label">The Vault · circa 2015</span>
-            </div>
-            <p class="era-subtitle">Hand-coded experiments from when I was first learning to build games. Kept for nostalgia.</p>
-            <div class="arcade-grid" id="arcade-grid-early">
-                <!-- Adventure RPG Cabinet -->
-                <div class="arcade-cabinet" data-game="adventure-rpg" data-category="strategy">
-                    <div class="cabinet-screen">
-                        <img src="img/adventurerpg.png" alt="Adventure RPG" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Adventure RPG</h3>
-                            <span class="device-label desktop">Desktop</span>
-                            <p class="game-description">TypeScript RPG Framework</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- AI Behavior Cabinet -->
-                <div class="arcade-cabinet" data-game="ai-behavior" data-category="strategy">
-                    <div class="cabinet-screen">
-                        <img src="img/aiBehavior.png" alt="AI Behavior" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">AI Behavior</h3>
-                            <span class="device-label desktop">Desktop</span>
-                            <p class="game-description">Real-time Strategy with Bot AI</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Image Shuffle Cabinet -->
-                <div class="arcade-cabinet" data-game="image-shuffle" data-category="puzzle">
-                    <div class="cabinet-screen">
-                        <img src="img/shuffle.png" alt="Image Shuffle" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Image Shuffle</h3>
-                            <span class="device-label both">Any Device</span>
-                            <p class="game-description">Simple Puzzle Game</p>
-                            <button class="play-button">PLAY</button>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Platformer Cabinet -->
-                <div class="arcade-cabinet" data-game="platformer" data-category="action">
-                    <div class="cabinet-screen">
-                        <img src="img/platformer.png" alt="Platformer" class="game-preview">
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Platformer</h3>
-                            <span class="device-label desktop">Desktop</span>
-                            <p class="game-description">Custom Physics Platformer</p>
                             <button class="play-button">PLAY</button>
                         </div>
                     </div>
