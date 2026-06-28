@@ -35,8 +35,8 @@ const gameData = {
     },
     'cutedefense': {
         title: 'CuteDefense',
-        description: 'A small, cute tower defense — place towers, hold the line, scale up your strategy as the waves get harder. Plays equally well on desktop and touch.',
-        url: 'https://jaxsbr.github.io/CuteDefense/',
+        description: 'A small, charming tower defense with a soft pastel world and a cast of smiley, candy-coloured characters — place towers, hold the line, and scale up your strategy as the waves get harder. Plays equally well on desktop and touch.',
+        url: 'https://jaxsbr.github.io/CuteDefense/?v=2',
         image: 'img/cutedefense.png',
         deviceType: 'both'
     }
