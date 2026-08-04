@@ -5,6 +5,13 @@
 
 // Game data configuration
 const gameData = {
+    'atoll': {
+        title: 'Atoll',
+        description: 'A tiny Stardew-like island builder with tower-defense pressure — settle a small island, farm corn, haul wood, research tools at the toolshop, and hold the shore against Wilderfolk raids. Every tile hand-drawn in Aseprite. Mouse + keyboard.',
+        url: 'https://jaxsbr.github.io/atoll/',
+        image: 'img/atoll.png',
+        deviceType: 'desktop'
+    },
     'toy-box-siege': {
         title: 'Toy Box Siege',
         description: 'A bedroom-themed tower defense inspired by Plants vs Zombies — built as a gift for the kids. Deploy toy defenders like water pistols, jack-in-the-boxes and glitter bombs against dust bunnies, cleaning robots and a mega mop boss across 10 levels.',
