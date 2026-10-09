@@ -125,7 +125,7 @@ function setupCabinetListeners() {
         // Add click event listener for cabinet (opens modal)
         cabinet.addEventListener('click', function (e) {
             // Don't trigger if clicking on the play button
-            if (e.target.classList.contains('play-button')) {
+            if (e.target.closest('.play-button')) {
                 return;
             }
             const gameId = this.getAttribute('data-game');
@@ -137,6 +137,8 @@ function setupCabinetListeners() {
         if (playButton) {
             playButton.addEventListener('click', function (e) {
                 e.stopPropagation(); // Prevent cabinet click
+                // Let native links open immediately, including with cached game data.
+                if (this.matches('a[href]')) return;
                 const gameId = cabinet.getAttribute('data-game');
                 launchGame(gameId);
             });
@@ -144,7 +146,7 @@ function setupCabinetListeners() {
 
         // Add keyboard support
         cabinet.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target === this && (e.key === 'Enter' || e.key === ' ')) {
                 e.preventDefault();
                 const gameId = this.getAttribute('data-game');
                 openGameModal(gameId);
@@ -169,18 +171,7 @@ function setupModalListeners() {
 
     // Modal play button click handler
     if (playLink) {
-        playLink.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default link behavior
-            const gameId = this.getAttribute('data-game-id');
-            if (gameId) {
-                launchGame(gameId);
-                closeGameModal(); // Close modal after launching
-            } else {
-                // Fallback: open the href directly
-                window.open(this.href, '_blank');
-                closeGameModal();
-            }
-        });
+        playLink.addEventListener('click', closeGameModal);
     }
 
     // Close modal when clicking outside
@@ -339,11 +330,9 @@ function launchGame(gameId) {
     // Show loading state
     showGameLoadingState(game.title);
 
-    // Launch the game in a new tab after a short delay for effect
-    setTimeout(() => {
-        window.open(game.url, '_blank');
-        hideGameLoadingState();
-    }, 500);
+    // Keep the fallback launch inside the user gesture for popup blockers.
+    window.open(game.url, '_blank', 'noopener');
+    setTimeout(hideGameLoadingState, 500);
 }
 
 /**
@@ -673,9 +662,12 @@ function setupSmoothScrolling() {
 
     [...navLinks, ...ctaButtons].forEach(link => {
         link.addEventListener('click', function (e) {
+            // Modal links change from a placeholder to a game URL.
+            const href = this.getAttribute('href');
+            if (!href?.startsWith('#')) return;
             e.preventDefault();
 
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {

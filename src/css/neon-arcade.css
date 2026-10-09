@@ -945,10 +945,18 @@ body {
     /* Disable clicks when hidden */
 }
 
-.arcade-cabinet:hover .cabinet-overlay {
+.arcade-cabinet:hover .cabinet-overlay,
+.arcade-cabinet:focus-within .cabinet-overlay {
     transform: translateY(0);
     pointer-events: auto;
     /* Enable clicks when visible */
+}
+
+@media (hover: none) {
+    .arcade-cabinet .cabinet-overlay {
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 }
 
 /* Ensure play button is always clickable when overlay is visible */
@@ -1018,6 +1026,9 @@ body {
 }
 
 .play-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13.3333px;
     background: transparent;
     border: 2px solid var(--neon-pink);
     color: var(--neon-pink);
