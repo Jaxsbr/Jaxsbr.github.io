@@ -14,10 +14,10 @@ const gameData = {
     },
     'shepherd-adventure': {
         title: 'Shepherd Adventure',
-        description: 'Prepare a lantern and follow a shepherd through a nighttime village toward the Nativity. An interactive 3D Bible story inspired by Luke 2:8–20, with illustrated scenes and touch or mouse controls.',
+        description: 'Prepare a lantern and follow a shepherd through a nighttime village toward the Nativity. An interactive 3D Bible story inspired by Luke 2:8–20, with illustrated scenes and mouse controls on desktop.',
         url: 'https://jesusfilm.github.io/story-lab/prototypes/shepherd-adventure/',
         image: 'img/shepherd-adventure.png',
-        deviceType: 'both'
+        deviceType: 'desktop'
     },
     'stormwatch': {
         title: 'Stormwatch',
@@ -283,7 +283,7 @@ function openGameModal(gameId) {
                 labelText = 'Desktop';
                 break;
             case 'both':
-                labelText = 'Any Device';
+                labelText = 'Mobile & Desktop';
                 break;
             default:
                 labelText = 'Desktop';
