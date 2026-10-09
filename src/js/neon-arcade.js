@@ -30,7 +30,7 @@ const gameData = {
         title: 'Reef Hop',
         description: 'Choose a colourful fish and swim through a turquoise reef, changing depths and hopping above the waves to dodge sharks, gulls and drifting rubbish. Arrow keys move between lanes; see how far you can swim.',
         url: 'https://jaxsbr.github.io/reef-hop-prototype/',
-        image: 'img/reef-hop.png',
+        image: 'img/reef-hop-title.webp',
         deviceType: 'desktop'
     },
     'tidekin': {
