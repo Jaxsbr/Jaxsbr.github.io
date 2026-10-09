@@ -5,6 +5,27 @@
 
 // Game data configuration
 const gameData = {
+    'stormwatch': {
+        title: 'Stormwatch',
+        description: 'A woodland tower defense adventure: place animal defenders, protect forest trails through escalating waves, and choose how to invest your rewards between battles. Built for touch on mobile and mouse on desktop.',
+        url: 'https://jaxsbr.github.io/stormwatch/',
+        image: 'img/stormwatch.png',
+        deviceType: 'both'
+    },
+    'reef-hop': {
+        title: 'Reef Hop',
+        description: 'Choose a colourful fish and swim through a turquoise reef, changing depths and hopping above the waves to dodge sharks, gulls and drifting rubbish. Arrow keys move between lanes; see how far you can swim.',
+        url: 'https://jaxsbr.github.io/reef-hop-prototype/',
+        image: 'img/reef-hop.png',
+        deviceType: 'desktop'
+    },
+    'tidekin': {
+        title: 'Tidekin',
+        description: 'Sail a floating workshop between limestone islands, dive to restore reefs, gather supplies and build upgrades for your ocean home. A single-player desktop prototype with progress saved in your browser. WASD sails, Space dives, and B opens the workshop.',
+        url: 'https://jaxsbr.github.io/tidekin/',
+        image: 'img/tidekin.png',
+        deviceType: 'desktop'
+    },
     'atoll': {
         title: 'Atoll',
         description: 'A tiny Stardew-like island builder with tower-defense pressure — settle a small island, farm corn, haul wood, research tools at the toolshop, and hold the shore against Wilderfolk raids. Every tile hand-drawn in Aseprite. Mouse + keyboard.',
