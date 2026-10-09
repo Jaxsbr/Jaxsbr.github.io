@@ -5,6 +5,20 @@
 
 // Game data configuration
 const gameData = {
+    'little-light-library': {
+        title: 'Little Light Library',
+        description: 'An illustrated Bible story library for children, with Adam and Eve, Noah, and Jonah. Choose from nine languages, open a picture book, and explore its animated scenes with narration. Supports touch and mouse controls.',
+        url: 'https://jesusfilm.github.io/little-light-library/',
+        image: 'img/little-light-library.png',
+        deviceType: 'both'
+    },
+    'shepherd-adventure': {
+        title: 'Shepherd Adventure',
+        description: 'Prepare a lantern and follow a shepherd through a nighttime village toward the Nativity. An interactive 3D Bible story inspired by Luke 2:8–20, with illustrated scenes and touch or mouse controls.',
+        url: 'https://jesusfilm.github.io/story-lab/prototypes/shepherd-adventure/',
+        image: 'img/shepherd-adventure.png',
+        deviceType: 'both'
+    },
     'stormwatch': {
         title: 'Stormwatch',
         description: 'A woodland tower defense adventure: place animal defenders, protect forest trails through escalating waves, and choose how to invest your rewards between battles. Built for touch on mobile and mouse on desktop.',
@@ -65,7 +79,7 @@ const gameData = {
         title: 'CuteDefense',
         description: 'A small, charming tower defense with a soft pastel world and a cast of smiley, candy-coloured characters — place towers, hold the line, and scale up your strategy as the waves get harder. Plays equally well on desktop and touch.',
         url: 'https://jaxsbr.github.io/CuteDefense/?v=2',
-        image: 'img/cutedefense.png',
+        image: 'img/cutedefense-title.png',
         deviceType: 'both'
     }
 };
