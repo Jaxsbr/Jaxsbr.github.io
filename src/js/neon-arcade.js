@@ -9,7 +9,7 @@ const gameData = {
         title: 'Little Light Library',
         description: 'An illustrated Bible story library for children, with Adam and Eve, Noah, and Jonah. Choose from nine languages, open a picture book, and explore its animated scenes with narration. Supports touch and mouse controls.',
         url: 'https://jesusfilm.github.io/little-light-library/',
-        image: 'img/little-light-library.png',
+        image: 'img/little-light-library-title.jpg',
         deviceType: 'both'
     },
     'shepherd-adventure': {
@@ -23,7 +23,7 @@ const gameData = {
         title: 'Stormwatch',
         description: 'A woodland tower defense adventure: place animal defenders, protect forest trails through escalating waves, and choose how to invest your rewards between battles. Built for touch on mobile and mouse on desktop.',
         url: 'https://jaxsbr.github.io/stormwatch/',
-        image: 'img/stormwatch.png',
+        image: 'img/stormwatch-title.jpg',
         deviceType: 'both'
     },
     'reef-hop': {
@@ -37,7 +37,7 @@ const gameData = {
         title: 'Tidekin',
         description: 'Sail a floating workshop between limestone islands, dive to restore reefs, gather supplies and build upgrades for your ocean home. A single-player desktop prototype with progress saved in your browser. WASD sails, Space dives, and B opens the workshop.',
         url: 'https://jaxsbr.github.io/tidekin/',
-        image: 'img/tidekin.png',
+        image: 'img/tidekin-title.jpg',
         deviceType: 'desktop'
     },
     'atoll': {
