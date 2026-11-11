@@ -36,36 +36,67 @@ try {
             page.on('pageerror', error => errors.push(error.message));
             page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
             const activate = locator => mobile ? locator.tap() : locator.click();
-            await page.route('**/neon-arcade.css*', async route => {
+            await page.route('**/hyperdrive.css*', async route => {
                 const response = await route.fetch();
                 await route.fulfill({ response, body: `${await response.text()}\n*, *::before, *::after { animation: none !important; transition: none !important; }` });
             });
             await page.goto(base, { waitUntil: 'networkidle' });
-            if (javaScriptEnabled) {
-                const script = await page.locator('script[src*="neon-arcade.js"]').getAttribute('src');
-                assert.ok(new URL(script, base).searchParams.get('v'), 'Version the script when game registrations change');
-                const links = await page.locator('.arcade-cabinet').evaluateAll(cards => cards.map(card => ({
-                    slug: card.dataset.game,
-                    href: card.querySelector('.play-button').href
-                })));
-                const urls = await page.evaluate(() => Object.fromEntries(Object.entries(gameData).map(([slug, game]) => [slug, game.url])));
-                for (const { slug, href } of links) assert.equal(href, urls[slug], `${slug} Play link must match its modal URL`);
+
+            const links = await page.locator('.game').evaluateAll(cards => cards.map(card => {
+                const play = card.querySelector('.game__play');
+                return { slug: card.dataset.game, href: play.getAttribute('href'), target: play.target };
+            }));
+            assert.ok(links.length > 0, 'The arcade must list its games in the HTML');
+            for (const { slug, href, target } of links) {
+                assert.match(href, /^https:\/\//, `${slug} needs a native Play link`);
+                assert.equal(target, '_blank', `${slug} must open in a new tab`);
             }
+
+            // With scripts the page settles into the 3D arcade, or back into cards when WebGL is unavailable.
+            let live = false;
+            if (javaScriptEnabled) {
+                const script = await page.locator('script[src*="main.js"]').getAttribute('src');
+                assert.ok(new URL(script, base).searchParams.get('v'), 'Version the script so returning visitors receive matching modules');
+                await page.waitForFunction(() => {
+                    const state = document.documentElement.classList;
+                    return state.contains('is-3d') || !state.contains('can-3d');
+                });
+                live = await page.evaluate(() => document.documentElement.classList.contains('is-3d'));
+            }
+            // Playwright scrolls targets into view; park at the arcade again before each 3D interaction.
+            const dock = async () => {
+                if (!live) return;
+                await page.evaluate(() => window.scrollTo({ top: document.getElementById('arcade').offsetTop, behavior: 'instant' }));
+                await page.locator('.arcade__screen').waitFor({ state: 'visible' });
+            };
+
             for (const [slug, url] of games) {
-                const card = page.locator(`[data-game="${slug}"]`);
-                await launch(page, url, () => activate(card.locator('.play-button')));
+                const card = page.locator(`.game[data-game="${slug}"]`);
+                await dock();
+                if (live) {
+                    await activate(page.locator(`#tab-${slug}`));
+                    await page.locator(`.game.is-active[data-game="${slug}"]`).waitFor();
+                }
+                await launch(page, url, () => activate(card.locator('.game__play')));
+                if (live) {
+                    await dock();
+                    const screen = page.locator(`.arcade__screen[href="${url}"]`);
+                    await screen.waitFor({ state: 'visible' });
+                    await launch(page, url, () => activate(screen));
+                }
                 if (javaScriptEnabled) {
-                    await activate(card.locator('.game-title'));
-                    await launch(page, url, () => activate(page.locator('#play-link')));
-                    await card.locator('.play-button').focus();
+                    await dock();
+                    await card.locator('.game__play').focus();
                     await launch(page, url, () => page.keyboard.press('Enter'));
                 }
             }
             assert.deepEqual(errors, [], 'Arcade must not report script or resource errors');
-            console.log(`${viewport.width}px, JavaScript ${javaScriptEnabled ? 'on' : 'off'}: actual game tabs passed`);
+            const mode = !javaScriptEnabled ? 'JavaScript off' : live ? '3D arcade' : 'cards';
+            console.log(`${viewport.width}px, ${mode}: actual game tabs passed`);
             await context.close();
         }
     }
 } finally {
     await browser.close();
 }
+

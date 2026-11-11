@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Senior software engineer working across applied AI, system design, security, reliability, and AI-augmented delivery.">
     <meta name="author" content="Jacobus Brink">
+    <meta name="theme-color" content="#03010a">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Jacobus Brink — Senior Software Engineer">
@@ -18,322 +19,251 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Jacobus Brink — Senior Software Engineer</title>
 
-    <!-- Google Fonts for Cyberpunk Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="src/css/neon-arcade.css?v=20261009-launch">
+    <link rel="stylesheet" href="src/css/hyperdrive.css?v=20261111">
+
+    <!-- Chooses the 3D layout before first paint; falls back if the scripts never start.
+         Holds the entrance animation until the display font has loaded. -->
+    <script>
+        (function (root) {
+            if (location.hash === '#about') location.replace('about.html');
+            root.classList.add('fonts-wait');
+            var ready = function () { root.classList.remove('fonts-wait'); };
+            try { document.fonts.load('900 1em Orbitron').then(ready, ready); } catch (error) { ready(); }
+            setTimeout(ready, 1800);
+            var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!calm && 'WebGL2RenderingContext' in window) {
+                root.classList.add('can-3d');
+                setTimeout(function () {
+                    if (!window.__jbBooted) root.classList.remove('can-3d');
+                }, 6000);
+            }
+        })(document.documentElement);
+    </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./src/vendor/three-0.185.1/build/three.module.min.js",
+                "three/addons/": "./src/vendor/three-0.185.1/addons/"
+            }
+        }
+    </script>
+    <script type="module" src="src/js/main.js?v=20261111"></script>
 </head>
 
-<body>
-    <!-- Neon Header Section -->
-    <header class="neon-header">
-        <div class="container">
-            <nav class="neon-nav">
-                <div class="nav-logo">
-                    <span class="logo-text">JB</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Selected Work</a></li>
-                    <li><a href="#arcade" class="nav-link">Arcade</a></li>
-                    <li><a href="https://github.com/jaxsbr" class="nav-link" target="_blank">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/jacobrink/" class="nav-link" target="_blank">LinkedIn</a></li>
-                </ul>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-            <div class="header-content">
-                <h1 class="neon-title">Jacobus Brink</h1>
-                <p class="neon-subtitle">Senior Software Engineer · Applied AI · System Design</p>
-                <div class="header-cta">
-                    <a href="#projects" class="neon-button primary">View Selected Work</a>
-                    <a href="https://www.linkedin.com/in/jacobrink/" class="neon-button secondary"
-                        target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="grid-background"></div>
-        <div class="tron-grid-advanced"></div>
-        <div class="tron-grid-pulse"></div>
-        <div class="particles-background"></div>
-        <div class="matrix-particles"></div>
+<body data-page="home">
+    <div class="backdrop" aria-hidden="true">
+        <div class="backdrop__stars"></div>
+        <div class="backdrop__sun"></div>
+        <div class="backdrop__grid"></div>
+    </div>
+    <canvas class="world" id="world" aria-hidden="true"></canvas>
+
+    <header class="nav" id="nav">
+        <a class="nav__logo" href="#top" aria-label="Jacobus Brink">JB</a>
+        <nav class="nav__links" aria-label="Primary">
+            <ul class="nav__menu">
+                <li><a class="nav__link" href="about.html">About</a></li>
+                <li><a class="nav__link" href="#arcade">Arcade</a></li>
+                <li><a class="nav__link" href="https://github.com/jaxsbr" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a class="nav__link" href="https://www.linkedin.com/in/jacobrink/" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+        </nav>
+        <button class="sound" id="sound-toggle" type="button" aria-pressed="false" aria-label="Sound" hidden>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor" />
+                <path class="sound__waves" d="M15.2 9a4.2 4.2 0 0 1 0 6M17.6 6.6a7.6 7.6 0 0 1 0 10.8" fill="none"
+                    stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path class="sound__mute" d="M15.4 9.6l4.8 4.8M20.2 9.6l-4.8 4.8" fill="none" stroke="currentColor"
+                    stroke-width="1.7" stroke-linecap="round" />
+            </svg>
+        </button>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="personal-section scan-lines">
-        <div class="container">
-            <div class="personal-content">
-                <div class="personal-info">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="personal-text">
-                        I'm Jaco, a senior software engineer with more than 14 years across product development,
-                        distributed systems, infrastructure, platform engineering, and applied AI.
-                    </p>
-                    <p class="personal-text">
-                        TypeScript is my strongest current language, but my work is primarily concerned with
-                        systems: architecture, security, reliability, observability, and making safe changes
-                        across unfamiliar technologies. I increasingly use AI agents to produce implementation
-                        while remaining accountable for the design, verification, and production behaviour.
-                    </p>
-                    <p class="personal-text">
-                        I'm also a follower of Jesus, a father, a husband, and a creative maker who builds indie
-                        games for the joy of it.
-                    </p>
-                    <div class="family-photo">
-                        <img src="img/fam.jpg" alt="Jacobus and his family" class="family-img">
-                        <div class="photo-overlay">
-                            <p class="photo-caption"></p>
-                        </div>
-                    </div>
-                    <div class="drives-me">
-                        <h3 class="drives-me-title">What Drives Me</h3>
-                        <p class="drives-me-text">
-                            My work is grounded in a conviction that building well is an act of stewardship.
-                            I follow Jesus, and that shapes how I approach craft, people, and purpose.
-                        </p>
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="hero__pin">
+                <div class="hero__inner">
+                    <h1 class="hero__title">
+                        <span class="hero__word" data-text="Jacobus"><span class="hero__face">Jacobus</span></span>
+                        <span class="hero__word" data-text="Brink"><span class="hero__face">Brink</span></span>
+                    </h1>
+                    <p class="hero__sub">Senior&nbsp;Software&nbsp;Engineer · Applied&nbsp;AI · System&nbsp;Design</p>
+                    <div class="hero__cta">
+                        <a class="btn btn--primary" href="#arcade">Enter the Arcade</a>
+                        <a class="btn" href="about.html">About Me</a>
                     </div>
                 </div>
+                <span class="hero__cue" aria-hidden="true"></span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Selected Work Section -->
-    <section id="projects" class="projects-section scan-lines">
-        <div class="container">
-            <div class="projects-header">
-                <h2 class="section-title projects-title">Selected Engineering Work</h2>
-                <p class="projects-subtitle">One representative system from my current professional work</p>
+        <section class="arcade" id="arcade" aria-labelledby="arcade-title">
+            <header class="arcade__head">
+                <h2 class="arcade__title" id="arcade-title">The Arcade</h2>
+            </header>
+
+            <div class="arcade__games">
+                <article class="game" id="game-little-light-library" data-game="little-light-library" style="--accent: #ffcf70">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/little-light-library-title.jpg"
+                            alt="Little Light Library title and close-up illustrated Bible storybook covers" width="1920" height="1080"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Little Light Library</h3>
+                        <p class="game__device">Mobile &amp; Desktop</p>
+                        <p class="game__tagline">Interactive Bible Storybooks</p>
+                        <p class="game__desc">An illustrated Bible story library for children, with Adam and Eve, Noah, and Jonah. Choose from nine languages, open a picture book, and explore its animated scenes with narration. Supports touch and mouse controls.</p>
+                        <a class="game__play" href="https://jesusfilm.github.io/little-light-library/" target="_blank" rel="noopener"
+                            aria-label="Play Little Light Library">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-shepherd-adventure" data-game="shepherd-adventure" style="--accent: #7fb2ff">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/shepherd-adventure.png"
+                            alt="Shepherd Adventure title screen with shepherds outside Bethlehem" width="960" height="540"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Shepherd Adventure</h3>
+                        <p class="game__device">Desktop</p>
+                        <p class="game__tagline">Journey to the Nativity</p>
+                        <p class="game__desc">Prepare a lantern and follow a shepherd through a nighttime village toward the Nativity. An interactive 3D Bible story inspired by Luke 2:8–20, with illustrated scenes and mouse controls on desktop.</p>
+                        <a class="game__play" href="https://jesusfilm.github.io/story-lab/prototypes/shepherd-adventure/" target="_blank" rel="noopener"
+                            aria-label="Play Shepherd Adventure">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-stormwatch" data-game="stormwatch" style="--accent: #ffa94d">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/stormwatch-title.jpg"
+                            alt="Stormwatch title over woodland defenders and their lantern-lit watchtower" width="1920" height="1080"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Stormwatch</h3>
+                        <p class="game__device">Mobile &amp; Desktop</p>
+                        <p class="game__tagline">Woodland Tower Defense</p>
+                        <p class="game__desc">A woodland tower defense adventure: place animal defenders, protect forest trails through escalating waves, and choose how to invest your rewards between battles. Built for touch on mobile and mouse on desktop.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/stormwatch/" target="_blank" rel="noopener"
+                            aria-label="Play Stormwatch">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-reef-hop" data-game="reef-hop" style="--accent: #3fe0ff">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/reef-hop-title.webp"
+                            alt="Reef Hop reference artwork with colourful fish, sharks and a clear turquoise reef" width="1672" height="941"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Reef Hop</h3>
+                        <p class="game__device">Desktop</p>
+                        <p class="game__tagline">Underwater Obstacle Runner</p>
+                        <p class="game__desc">Choose a colourful fish and swim through a turquoise reef, changing depths and hopping above the waves to dodge sharks, gulls and drifting rubbish. Arrow keys move between lanes; see how far you can swim.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/reef-hop-prototype/" target="_blank" rel="noopener"
+                            aria-label="Play Reef Hop">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-toy-box-siege" data-game="toy-box-siege" style="--accent: #ff6f7d">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/toy-box-siege.png" style="object-position: 50% 0%"
+                            alt="Toy Box Siege" width="2348" height="1632"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Toy Box Siege</h3>
+                        <p class="game__device">Mobile &amp; Desktop</p>
+                        <p class="game__tagline">Tower Defense</p>
+                        <p class="game__desc">A bedroom-themed tower defense inspired by Plants vs Zombies — built as a gift for the kids. Deploy toy defenders like water pistols, jack-in-the-boxes and glitter bombs against dust bunnies, cleaning robots and a mega mop boss across 10 levels.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/toy-box-siege/" target="_blank" rel="noopener"
+                            aria-label="Play Toy Box Siege">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-emberpath" data-game="emberpath" style="--accent: #ff8f45">
+                    <div class="game__screen">
+                        <img class="game__art game__art--pixel game__art--contain" src="img/emberpath.png"
+                            alt="Emberpath" width="256" height="256"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Emberpath</h3>
+                        <p class="game__device">Mobile &amp; Desktop</p>
+                        <p class="game__tagline">Top-Down Adventure</p>
+                        <p class="game__desc">A Pilgrim's Progress-inspired top-down adventure with hand-prompted AI art (Midjourney + Flow). Mobile-first exploration broken up by story scenes — built for the family. WASD on desktop, virtual joystick on mobile.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/emberpath/" target="_blank" rel="noopener"
+                            aria-label="Play Emberpath">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-vylux" data-game="vylux" style="--accent: #55dcff">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/vylux.png" style="object-position: 50% 10%"
+                            alt="Vylux" width="731" height="610"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Vylux</h3>
+                        <p class="game__device">Desktop</p>
+                        <p class="game__tagline">Tron-Inspired RTS</p>
+                        <p class="game__desc">A Tron-inspired isometric real-time strategy on a deterministic sim — single-player PvE wave defense with a roguelike-run shape. Hold the grid against escalating raider waves; pick tech upgrades between waves; survive the run.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/vylux/" target="_blank" rel="noopener"
+                            aria-label="Play Vylux">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-robo-war" data-game="robo-war" style="--accent: #6dff8a">
+                    <div class="game__screen">
+                        <img class="game__art game__art--pixel game__art--contain" src="img/robot.png"
+                            alt="Robo War" width="128" height="128"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">Robo War</h3>
+                        <p class="game__device">Desktop</p>
+                        <p class="game__tagline">WASD + Mouse Shooter</p>
+                        <p class="game__desc">A top-down arena shooter — WASD to move, mouse to aim and fire. One of my early hand-coded experiments, still fun for a quick round.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/RoboWar/" target="_blank" rel="noopener"
+                            aria-label="Play Robo War">Play</a>
+                    </div>
+                </article>
+
+                <article class="game" id="game-cutedefense" data-game="cutedefense" style="--accent: #ff7fd6">
+                    <div class="game__screen">
+                        <img class="game__art" src="img/cutedefense-title.png"
+                            alt="CuteDefense" width="960" height="441"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="game__info">
+                        <h3 class="game__title">CuteDefense</h3>
+                        <p class="game__device">Mobile &amp; Desktop</p>
+                        <p class="game__tagline">Tower Defense Game</p>
+                        <p class="game__desc">A small, charming tower defense with a soft pastel world and a cast of smiley, candy-coloured characters — place towers, hold the line, and scale up your strategy as the waves get harder. Plays equally well on desktop and touch.</p>
+                        <a class="game__play" href="https://jaxsbr.github.io/CuteDefense/?v=2" target="_blank" rel="noopener"
+                            aria-label="Play CuteDefense">Play</a>
+                    </div>
+                </article>
             </div>
-            <div class="projects-grid">
-                <a href="https://github.com/JesusFilm/jesusfilm-rag" class="project-card" target="_blank">
-                    <h3 class="project-name">Biblically Aligned Retrieval Service</h3>
-                    <p class="project-desc">A production retrieval system designed around bounded contexts for
-                        acquisition, ingestion, and retrieval. It includes policy-scoped access, deterministic
-                        citations, retrieval evaluation, idempotent ingestion, and enforced architecture boundaries.
-                        Built as part of my work at JesusFilm Project.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">TypeScript</span>
-                        <span class="project-tag">RAG</span>
-                        <span class="project-tag">PostgreSQL</span>
-                        <span class="project-tag">System Design</span>
-                    </div>
-                    <span class="project-link-label">View the public repository →</span>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Creative Lab (Arcade Games) Section -->
-    <section id="arcade" class="arcade-section scan-lines">
-        <div class="container">
-            <div class="arcade-header">
-                <h2 class="section-title arcade-title">The Arcade</h2>
-                <p class="arcade-subtitle">A curated cabinet of games I've built — all playable, all yours to try</p>
-            </div>
-
-            <div class="arcade-grid">
-                <!-- Little Light Library Cabinet -->
-                <div class="arcade-cabinet" data-game="little-light-library">
-                    <div class="cabinet-screen">
-                        <img src="img/little-light-library-title.jpg" alt="Little Light Library title and close-up illustrated Bible storybook covers" class="game-preview">
-                        <span class="device-label both">Mobile & Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Little Light Library</h3>
-                            <p class="game-description">Interactive Bible Storybooks</p>
-                            <a class="play-button" href="https://jesusfilm.github.io/little-light-library/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Shepherd Adventure Cabinet -->
-                <div class="arcade-cabinet" data-game="shepherd-adventure">
-                    <div class="cabinet-screen">
-                        <img src="img/shepherd-adventure.png" alt="Shepherd Adventure title screen with shepherds outside Bethlehem" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Shepherd Adventure</h3>
-                            <p class="game-description">Journey to the Nativity</p>
-                            <a class="play-button" href="https://jesusfilm.github.io/story-lab/prototypes/shepherd-adventure/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Stormwatch Cabinet -->
-                <div class="arcade-cabinet" data-game="stormwatch">
-                    <div class="cabinet-screen">
-                        <img src="img/stormwatch-title.jpg" alt="Stormwatch title over woodland defenders and their lantern-lit watchtower" class="game-preview">
-                        <span class="device-label both">Mobile & Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Stormwatch</h3>
-                            <p class="game-description">Woodland Tower Defense</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/stormwatch/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Reef Hop Cabinet -->
-                <div class="arcade-cabinet" data-game="reef-hop">
-                    <div class="cabinet-screen">
-                        <img src="img/reef-hop-title.webp" alt="Reef Hop reference artwork with colourful fish, sharks and a clear turquoise reef" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Reef Hop</h3>
-                            <p class="game-description">Underwater Obstacle Runner</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/reef-hop-prototype/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Tidekin Cabinet -->
-                <div class="arcade-cabinet" data-game="tidekin">
-                    <div class="cabinet-screen">
-                        <img src="img/tidekin-title.jpg" alt="Tidekin title over its floating workshop and sunlit island lagoon" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Tidekin</h3>
-                            <p class="game-description">Ocean Workshop Adventure</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/tidekin/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Atoll Cabinet -->
-                <div class="arcade-cabinet" data-game="atoll">
-                    <div class="cabinet-screen">
-                        <img src="img/atoll.png" alt="Atoll" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Atoll</h3>
-                            <p class="game-description">Island Builder Defense</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/atoll/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Toy Box Siege Cabinet -->
-                <div class="arcade-cabinet" data-game="toy-box-siege">
-                    <div class="cabinet-screen">
-                        <img src="img/toy-box-siege.png" alt="Toy Box Siege" class="game-preview">
-                        <span class="device-label both">Mobile & Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Toy Box Siege</h3>
-                            <p class="game-description">Tower Defense</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/toy-box-siege/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Emberpath Cabinet -->
-                <div class="arcade-cabinet" data-game="emberpath">
-                    <div class="cabinet-screen">
-                        <img src="img/emberpath.png" alt="Emberpath" class="game-preview">
-                        <span class="device-label both">Mobile & Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Emberpath</h3>
-                            <p class="game-description">Top-Down Adventure</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/emberpath/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Vylux Cabinet -->
-                <div class="arcade-cabinet" data-game="vylux">
-                    <div class="cabinet-screen">
-                        <img src="img/vylux.png" alt="Vylux" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Vylux</h3>
-                            <p class="game-description">Tron-Inspired RTS</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/vylux/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- Robo War Cabinet -->
-                <div class="arcade-cabinet" data-game="robo-war">
-                    <div class="cabinet-screen">
-                        <img src="img/robot.png" alt="Robo War" class="game-preview">
-                        <span class="device-label desktop">Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">Robo War</h3>
-                            <p class="game-description">WASD + Mouse Shooter</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/RoboWar/" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-
-                <!-- CuteDefense Cabinet -->
-                <div class="arcade-cabinet" data-game="cutedefense">
-                    <div class="cabinet-screen">
-                        <img src="img/cutedefense-title.png" alt="CuteDefense" class="game-preview">
-                        <span class="device-label both">Mobile & Desktop</span>
-                        <div class="cabinet-overlay">
-                            <h3 class="game-title">CuteDefense</h3>
-                            <p class="game-description">Tower Defense Game</p>
-                            <a class="play-button" href="https://jaxsbr.github.io/CuteDefense/?v=2" target="_blank" rel="noopener">PLAY</a>
-                        </div>
-                    </div>
-                    <div class="cabinet-base"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="neon-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">&copy; <span id="current-year"></span> Jacobus Brink</p>
-                <div class="social-links">
-                    <a href="https://github.com/jaxsbr" class="social-link" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/jacobrink/" class="social-link" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+    <footer class="footer">
+        <p class="footer__text">&copy; <span id="current-year">2026</span> Jacobus Brink</p>
+        <ul class="footer__links">
+            <li><a href="https://github.com/jaxsbr" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/jacobrink/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
     </footer>
-
-    <!-- Game Modal -->
-    <div id="game-modal" class="game-modal">
-        <div class="modal-content">
-            <button class="close-modal" aria-label="Close modal">&times;</button>
-            <div class="modal-header">
-                <h2 id="modal-title" class="modal-title"></h2>
-                <span id="modal-device-label" class="device-label"></span>
-                <p id="modal-description" class="modal-description"></p>
-            </div>
-            <div class="modal-body">
-                <img id="modal-image" src="" alt="" class="modal-image">
-            </div>
-            <div class="modal-footer">
-                <a id="play-link" href="#" class="neon-button" target="_blank" rel="noopener">
-                    <i class="play-icon">&#9654;</i> Play Now
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Custom JavaScript -->
-    <script src="src/js/neon-arcade.js?v=20261009-reef-title"></script>
-    <script>
-        // Set dynamic copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 
 </html>
+
